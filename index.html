@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alvura — Limpeza Especializada em Lisboa · Casas, Escritórios e Pós-obra</title>
+<meta name="description" content="Limpeza profissional em Lisboa: casas, escritórios, pós-obra, sofás, tapetes, vidros e condomínios. Equipas próprias, produtos certificados e orçamento gratuito.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#0f3a2e;
+    --forest-2:#165140;
+    --forest-3:#0a2a21;
+    --mint:#8fd9b6;
+    --mint-light:#c3efd8;
+    --paper:#f5f8f6;
+    --paper-2:#e8efeb;
+    --ink:#0d221b;
+    --text:#2b3a35;
+    --muted:#66766f;
+    --line:#d7e2dc;
+    --line-dark:rgba(255,255,255,.13);
+    /* usados pelo seletor de idiomas */
+    --ivory:#f5f8f6;
+    --ivory-2:#e8efeb;
+    --brass-light:#8fd9b6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,"Helvetica Neue",Arial,sans-serif;font-size:16px;background:var(--paper);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+  img{display:block;width:100%;height:100%;object-fit:cover;color:transparent}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3,h4{font-family:Manrope,Inter,sans-serif;font-weight:800;color:var(--ink);line-height:1.1;letter-spacing:-.025em}
+  em{font-style:normal}
+  .container{width:min(1480px,90%);margin-inline:auto}
+  section{padding:130px 0}
+  .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:.76rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--forest-2);margin-bottom:22px}
+  .eyebrow::before{content:"";width:30px;height:2px;background:var(--forest-2)}
+  .section-head{max-width:820px;margin-bottom:64px}
+  .section-head.center{text-align:center;margin:0 auto 64px}
+  .section-head.center .eyebrow::after{content:"";width:30px;height:2px;background:var(--forest-2)}
+  .section-head h2{font-size:clamp(2.3rem,4vw,3.6rem)}
+  .section-head h2 em{color:var(--forest-2)}
+  .section-head p{color:var(--muted);margin-top:20px;font-size:1.08rem;font-weight:300}
+  .dark{background:var(--forest);color:#c4d8cf}
+  .dark h2,.dark h3{color:#fff}
+  .dark .eyebrow{color:var(--mint)}
+  .dark .eyebrow::before,.dark .section-head.center .eyebrow::after{background:var(--mint)}
+  .dark .section-head h2 em{color:var(--mint)}
+  .dark .section-head p{color:#a3bdb2}
+  .soft{background:var(--paper-2)}
+  .ph{background:var(--paper-2);overflow:hidden;position:relative}
+  .dark .ph{background:var(--forest-2)}
+  .ph img{transition:transform 1.2s cubic-bezier(.2,.6,.2,1)}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:17px 30px;font-family:inherit;font-size:.94rem;font-weight:600;border:2px solid transparent;border-radius:6px;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+  .btn::after{content:"→";transition:transform .3s}
+  .btn:hover::after{transform:translateX(4px)}
+  .btn-mint{background:var(--mint);color:var(--forest-3);border-color:var(--mint)}
+  .btn-mint:hover{background:var(--mint-light);border-color:var(--mint-light)}
+  .btn-line{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
+  .btn-line:hover{border-color:#fff}
+  .btn-forest{background:var(--forest);color:#fff;border-color:var(--forest)}
+  .btn-forest:hover{background:var(--forest-2)}
+  .btn-outline{background:transparent;color:var(--forest);border-color:var(--forest)}
+  .btn-outline:hover{background:var(--forest);color:#fff}
+  .btn-wa{background:#25d366;color:#fff;border-color:#25d366}
+  .btn-wa::after{content:none}
+
+  /* CABEÇALHO */
+  header{position:fixed;inset:0 0 auto 0;z-index:50;color:#fff;border-bottom:1px solid transparent;transition:background .5s,border-color .5s}
+  header.scrolled{background:rgba(15,58,46,.97);border-bottom-color:var(--line-dark)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:92px;gap:28px}
+  .logo{display:flex;align-items:center;gap:14px;white-space:nowrap}
+  .logo .mark{width:46px;height:46px;flex:none}
+  .logo .mark svg{width:100%;height:100%}
+  .logo strong{display:block;font-family:Manrope,sans-serif;font-weight:800;font-size:1.45rem;line-height:1;letter-spacing:.16em}
+  .logo small{display:block;font-size:.62rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#a3bdb2;margin-top:7px}
+  .nav ul{display:flex;gap:34px;list-style:none;font-size:.94rem}
+  .nav ul a{white-space:nowrap;color:#dcebe4;position:relative;padding:6px 0}
+  .nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--mint);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+  .nav ul a:hover{color:#fff}
+  .nav ul a:hover::after{transform:scaleX(1)}
+  .nav-right{display:flex;align-items:center;gap:16px}
+  .nav-right .btn{padding:12px 22px}
+  .nav-right .btn::after{content:none}
+  .menu-toggle{display:none;background:none;border:0;font-size:1.7rem;cursor:pointer;color:#fff}
+
+
+  /* IDIOMAS */
+  .lang{position:relative}
+  .lang-btn{display:flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid rgba(245,239,230,.35);background:transparent;color:#fff;font:inherit;font-size:.74rem;letter-spacing:.16em;cursor:pointer;transition:.3s}
+  .lang-btn:hover{border-color:var(--brass-light)}
+  .flag{width:22px;height:16px;object-fit:cover;box-shadow:0 0 0 1px rgba(0,0,0,.15);flex:none}
+  .caret{font-size:.6rem;opacity:.7}
+  .nav ul.lang-menu{display:block;gap:0;font-size:.92rem;letter-spacing:0;text-transform:none}
+  .lang-menu{position:absolute;right:0;top:calc(100% + 12px);background:#fff;box-shadow:0 18px 44px rgba(0,0,0,.28);list-style:none;padding:8px;min-width:210px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:.25s;z-index:70}
+  .lang.open .lang-menu{opacity:1;visibility:visible;transform:none}
+  .lang-menu button{display:flex;align-items:center;gap:12px;width:100%;padding:10px 12px;border:0;background:none;font:inherit;color:var(--ink);cursor:pointer;text-align:left}
+  .lang-menu button:hover{background:var(--ivory)}
+  .lang-menu button.active{background:var(--ivory-2);font-weight:600}
+
+  /* HERO */
+  .hero{background:var(--forest);color:#fff;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:180px 0 0;position:relative;overflow:hidden;isolation:isolate}
+  .slides{position:absolute;inset:0;z-index:-2;background:var(--forest-3)}
+  .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.8s ease}
+  .slide.on{opacity:1}
+  .slide img{transform:scale(1.14);transition:transform 8s ease-out}
+  .slide.on img{transform:scale(1)}
+  .hero-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(10,42,33,.95) 0%,rgba(10,42,33,.8) 42%,rgba(10,42,33,.3) 100%),linear-gradient(0deg,rgba(10,42,33,.94) 0%,rgba(10,42,33,0) 45%),linear-gradient(180deg,rgba(10,42,33,.65) 0%,rgba(10,42,33,0) 25%)}
+  .hero .eyebrow{color:var(--mint)}
+  .hero h1{font-size:clamp(3rem,6.4vw,6.2rem);font-weight:800;color:#fff;line-height:1.02;letter-spacing:-.04em;margin-bottom:30px;max-width:1050px;text-shadow:0 2px 30px rgba(0,0,0,.25)}
+  .hero h1 em{display:block;color:var(--mint)}
+  .hero p{font-size:1.18rem;font-weight:300;color:#d8e8e0;max-width:600px;margin-bottom:44px}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+  .hero-facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:96px;border-top:1px solid var(--line-dark)}
+  .hero-facts div{padding:32px 0 42px}
+  .hero-facts div+div{padding-left:40px;border-left:1px solid var(--line-dark)}
+  .hero-facts strong{display:block;font-family:Manrope,sans-serif;font-weight:800;font-size:2.8rem;color:#fff;line-height:1.1;margin-bottom:6px;letter-spacing:-.02em}
+  .hero-facts span{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:#a3bdb2}
+  .hero-facts strong span{font:inherit;letter-spacing:inherit;text-transform:none;color:inherit}
+
+  /* ABERTURA — o rodo limpa o ecrã */
+  .intro{position:fixed;inset:0;z-index:200;pointer-events:none;animation:liftOff 1s cubic-bezier(.77,0,.18,1) 2.8s forwards}
+  @keyframes liftOff{to{transform:translateY(-100%)}}
+  .dirty{position:absolute;inset:0;background:radial-gradient(circle at 18% 30%,rgba(255,255,255,.05) 0 6%,transparent 7%),radial-gradient(circle at 72% 64%,rgba(255,255,255,.04) 0 9%,transparent 10%),radial-gradient(circle at 46% 82%,rgba(255,255,255,.04) 0 5%,transparent 6%),radial-gradient(circle at 85% 20%,rgba(255,255,255,.035) 0 7%,transparent 8%),var(--forest-3)}
+  .dirty span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(2.6rem,6vw,5rem);letter-spacing:.2em;padding-left:.2em;color:rgba(255,255,255,.06)}
+  .clean{position:absolute;inset:0;background:#fff;clip-path:inset(0 100% 0 0);animation:wipe 1.3s cubic-bezier(.4,.1,.3,1) .35s forwards;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px}
+  @keyframes wipe{to{clip-path:inset(0 0 0 0)}}
+  .squeegee{position:absolute;top:-5%;bottom:-5%;left:0;width:14px;margin-left:-7px;background:linear-gradient(90deg,var(--forest-2),var(--mint) 50%,var(--forest-2));border-radius:7px;box-shadow:0 0 40px rgba(143,217,182,.55);animation:sweep 1.3s cubic-bezier(.4,.1,.3,1) .35s forwards,fadeOut .3s ease 1.6s forwards}
+  @keyframes sweep{to{left:100%}}
+  .clean svg.big{width:92px;height:92px}
+  .clean .name{font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(2.6rem,6vw,5rem);letter-spacing:.2em;padding-left:.2em;color:var(--forest);line-height:1}
+  .clean .sub{font-size:.76rem;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--forest-2)}
+  .spark{position:absolute;width:26px;height:26px;opacity:0;animation:twinkle .9s ease var(--dl) forwards}
+  .spark svg{width:100%;height:100%;fill:var(--mint)}
+  @keyframes twinkle{0%{opacity:0;transform:scale(.2) rotate(0)}50%{opacity:1;transform:scale(1.1) rotate(45deg)}100%{opacity:0;transform:scale(.6) rotate(90deg)}}
+  @keyframes fadeOut{to{opacity:0}}
+  :root{--d:3.3s}
+  .no-intro{--d:.1s}
+  .no-intro .intro{display:none}
+  header{animation:fadeDown 1s ease var(--d) both}
+  .hero .eyebrow{animation:rise .9s ease calc(var(--d) + .15s) both}
+  .hero h1{animation:reveal 1.3s cubic-bezier(.2,.7,.2,1) calc(var(--d) + .3s) both}
+  .hero p{animation:rise 1s ease calc(var(--d) + .75s) both}
+  .hero-actions{animation:rise 1s ease calc(var(--d) + .95s) both}
+  .hero-facts{animation:rise 1s ease calc(var(--d) + 1.2s) both}
+  @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+  @keyframes reveal{from{opacity:0;clip-path:inset(0 0 100% 0);transform:translateY(40px)}to{opacity:1;clip-path:inset(0 0 -12% 0);transform:none}}
+  @keyframes fadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:none}}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+  /* SERVIÇOS */
+  .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .svc{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .35s,box-shadow .35s}
+  .svc:hover{transform:translateY(-6px);box-shadow:0 22px 48px rgba(15,58,46,.12)}
+  .svc .ph{height:210px}
+  .svc:hover img{transform:scale(1.06)}
+  .svc-body{padding:26px 26px 28px}
+  .svc h3{font-size:1.25rem;margin-bottom:8px}
+  .svc p{color:var(--muted);font-size:.94rem;font-weight:300}
+
+  /* ANTES E DEPOIS */
+  .ba-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:80px;align-items:center}
+  .ba-grid h2{font-size:clamp(2.3rem,3.8vw,3.4rem);margin-bottom:22px}
+  .ba-grid h2 em{color:var(--mint)}
+  .ba-grid > div > p{color:#a3bdb2;font-weight:300;font-size:1.08rem;margin-bottom:30px}
+  .ba-list{list-style:none}
+  .ba-list li{padding:14px 0;border-top:1px solid var(--line-dark);display:flex;gap:14px;color:#e2efe9}
+  .ba-list li::before{content:"✓";color:var(--mint);font-weight:700}
+  .ba{--p:50%;position:relative;aspect-ratio:16/10;border-radius:16px;overflow:hidden;user-select:none;background:var(--forest-2)}
+  .ba > img{position:absolute;inset:0}
+  .ba-before{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--p)) 0 0)}
+  .ba-before img{filter:sepia(.6) saturate(.5) brightness(.68) contrast(.88)}
+  .ba-before::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 22% 70%,rgba(70,50,20,.35),transparent 28%),radial-gradient(ellipse at 64% 82%,rgba(70,50,20,.3),transparent 24%),radial-gradient(ellipse at 40% 30%,rgba(90,70,30,.22),transparent 30%),radial-gradient(ellipse at 85% 40%,rgba(80,60,25,.25),transparent 22%)}
+  .ba-line{position:absolute;top:0;bottom:0;left:var(--p);width:3px;margin-left:-1.5px;background:#fff;pointer-events:none}
+  .ba-line::after{content:"⟷";position:absolute;top:50%;left:50%;width:52px;height:52px;margin:-26px 0 0 -26px;border-radius:50%;background:#fff;color:var(--forest);display:grid;place-items:center;font-size:1.3rem;font-weight:700;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+  .ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+  .ba .lab{position:absolute;top:18px;padding:6px 14px;border-radius:999px;font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;pointer-events:none}
+  .ba .lab.l{left:18px;background:rgba(0,0,0,.55);color:#fff}
+  .ba .lab.r{right:18px;background:#fff;color:var(--forest)}
+
+  /* PROCESSO */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:50px}
+  .step .n{font-family:Manrope,sans-serif;font-weight:800;font-size:3rem;color:var(--forest-2);line-height:1;padding-bottom:20px;margin-bottom:22px;border-bottom:1px solid var(--line)}
+  .step h3{font-size:1.35rem;margin-bottom:10px}
+  .step p{color:var(--muted);font-weight:300}
+
+  /* PORQUÊ NÓS */
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center}
+  .why-img{height:clamp(480px,40vw,640px);border-radius:18px}
+  .why h2{font-size:clamp(2.3rem,3.8vw,3.4rem);margin-bottom:22px}
+  .why h2 em{color:var(--forest-2)}
+  .why-grid > div > p{font-weight:300;font-size:1.08rem;margin-bottom:38px}
+  .feats{display:grid;grid-template-columns:1fr 1fr;gap:30px 36px}
+  .feat .ic{width:50px;height:50px;border-radius:12px;background:var(--forest);display:grid;place-items:center;margin-bottom:14px}
+  .feat .ic svg{width:24px;height:24px;stroke:var(--mint);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  .feat h3{font-size:1.12rem;margin-bottom:6px}
+  .feat p{color:var(--muted);font-weight:300;font-size:.95rem}
+
+  /* PLANOS */
+  .plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1300px;margin:0 auto}
+  .plan{background:#fff;border:1px solid var(--line);border-radius:16px;padding:46px 40px;display:flex;flex-direction:column;position:relative}
+  .plan.featured{background:var(--forest);border-color:var(--forest);color:#c4d8cf;box-shadow:0 30px 60px rgba(15,58,46,.25)}
+  .plan.featured h3{color:#fff}
+  .plan .badge{align-self:flex-start;margin-bottom:18px;background:var(--mint);color:var(--forest-3);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;border-radius:999px}
+  .plan h3{font-size:1.6rem}
+  .plan .for{color:var(--muted);font-weight:300;margin-top:6px}
+  .plan.featured .for{color:#a3bdb2}
+  .plan .from{margin-top:30px;font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .plan.featured .from{color:#a3bdb2}
+  .plan .price{font-family:Manrope,sans-serif;font-weight:800;font-size:3.2rem;color:var(--ink);line-height:1.1;letter-spacing:-.03em}
+  .plan.featured .price{color:#fff}
+  .plan .pp{font-size:.76rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--forest-2)}
+  .plan.featured .pp{color:var(--mint)}
+  .plan ul{list-style:none;margin:28px 0 34px;flex:1;border-top:1px solid var(--line)}
+  .plan.featured ul{border-color:var(--line-dark)}
+  .plan li{padding:12px 0;border-bottom:1px solid var(--line);font-weight:300;display:flex;gap:12px}
+  .plan.featured li{border-color:var(--line-dark)}
+  .plan li::before{content:"✓";color:var(--forest-2);font-weight:700}
+  .plan.featured li::before{color:var(--mint)}
+  .plan .btn{width:100%}
+  .plans-note{text-align:center;color:var(--muted);font-weight:300;margin-top:34px;font-size:.94rem}
+
+  /* OPINIÕES */
+  .r-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .review{background:#fff;border:1px solid var(--line);border-radius:16px;padding:40px 36px}
+  .review .stars{color:#e3a72f;letter-spacing:4px;margin-bottom:18px}
+  .review p{font-size:1.1rem;line-height:1.65;color:var(--ink);margin-bottom:24px}
+  .review strong{display:block;font-weight:600;color:var(--ink)}
+  .review small{color:var(--muted)}
+
+  /* FAQ */
+  .faq{max-width:940px;margin:0 auto}
+  .faq details{background:#fff;border-radius:14px;padding:26px 30px;margin-bottom:14px;border:1px solid var(--line)}
+  .faq summary{font-family:Manrope,sans-serif;font-weight:700;font-size:1.12rem;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";font-weight:400;color:var(--forest-2);font-size:1.6rem;line-height:1}
+  .faq details[open] summary::after{content:"−"}
+  .faq details p{color:var(--muted);font-weight:300;margin-top:12px}
+
+  /* CONTACTO */
+  .contact-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:100px;align-items:start}
+  .contact h2{font-size:clamp(2.3rem,3.8vw,3.4rem);margin-bottom:22px}
+  .contact-grid > div > p{color:#a3bdb2;font-weight:300;font-size:1.08rem;margin-bottom:44px}
+  .c-line{padding:20px 0;border-top:1px solid var(--line-dark)}
+  .c-line strong{display:block;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mint);font-weight:600;margin-bottom:4px}
+  .c-line span{color:#fff;font-weight:300}
+  .form{background:#fff;color:var(--text);padding:clamp(34px,4.5vw,60px);border-radius:20px}
+  .dark .form h3{color:var(--ink)}
+  .form h3{font-size:1.9rem;margin-bottom:30px}
+  .fields{display:grid;grid-template-columns:1fr 1fr;gap:22px 24px}
+  .field{display:flex;flex-direction:column;gap:8px}
+  .field.full{grid-column:span 2}
+  .field label{font-size:.74rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .field input,.field select,.field textarea{border:1px solid var(--line);border-radius:10px;padding:13px 14px;font:inherit;color:var(--ink);background:var(--paper);outline:none;transition:border-color .3s,background .3s}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--forest);background:#fff}
+  .field textarea{min-height:96px;resize:vertical}
+  .form .btn{width:100%;margin-top:28px;padding:19px}
+  .form-note{text-align:center;color:var(--muted);font-weight:300;font-size:.86rem;margin-top:14px}
+
+  .map{height:400px;filter:grayscale(.8) contrast(1.02)}
+  .map iframe{width:100%;height:100%;border:0}
+
+  footer{background:var(--forest-3);color:#8fa99e;padding:86px 0 34px}
+  .foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:60px;margin-bottom:64px}
+  footer .logo{color:#fff}
+  footer p{margin-top:24px;max-width:440px;font-weight:300}
+  footer h4{color:#fff;font-size:1.1rem;margin-bottom:16px}
+  footer li{list-style:none;margin-bottom:10px;font-weight:300}
+  footer a:hover{color:#fff}
+  .legal{border-top:1px solid rgba(255,255,255,.08);padding-top:26px;text-align:center;font-size:.8rem;font-weight:300}
+
+  .wa-float{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;font-size:1.6rem;box-shadow:0 10px 24px rgba(37,211,102,.4);z-index:60;transition:transform .2s;animation:fadeIn 1s ease calc(var(--d) + 1.8s) both}
+  .wa-float:hover{transform:scale(1.08)}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity 1s ease,transform 1s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (prefers-reduced-motion:reduce){
+    .intro{display:none}
+    *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important}
+    .reveal{opacity:1;transform:none}
+  }
+  @media (max-width:1280px){
+    .nav ul{gap:24px;font-size:.9rem}
+    .logo small{display:none}
+    .svc-grid{grid-template-columns:repeat(3,1fr)}
+  }
+  @media (max-width:1100px){
+    .steps{grid-template-columns:repeat(2,1fr)}
+    .why-grid,.contact-grid,.ba-grid{gap:60px}
+    .ba-grid{grid-template-columns:1fr}
+  }
+  @media (max-width:1000px){
+    .why-grid,.contact-grid{grid-template-columns:1fr}
+    .plan-grid,.r-grid{grid-template-columns:1fr;max-width:620px;margin:0 auto}
+    .foot{grid-template-columns:1fr}
+  }
+  @media (max-width:960px){
+    .nav ul{display:none}
+    .nav ul.open{display:flex;flex-direction:column;position:absolute;top:92px;left:0;right:0;background:var(--forest);padding:28px 5%;gap:22px;border-bottom:1px solid var(--line-dark)}
+    .menu-toggle{display:block}
+    .nav-right .btn{display:none}
+    section{padding:90px 0}
+    .hero{padding-top:150px}
+  }
+  @media (max-width:700px){
+    .svc-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+    .svc .ph{height:130px}
+    .svc-body{padding:18px 16px 20px}
+    .svc h3{font-size:1.02rem}
+    .svc p{display:none}
+    .ba{aspect-ratio:4/3}
+  }
+  @media (max-width:600px){
+    .steps,.feats,.fields{grid-template-columns:1fr}
+    .field.full{grid-column:span 1}
+    .hero-facts strong{font-size:1.9rem}
+    .hero-facts div+div{padding-left:18px}
+    .why-img{height:360px}
+    .logo strong{font-size:1.2rem}
+  }
+</style>
+</head>
+<body>
+<script>try{if(sessionStorage.getItem("alIntro")||matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("no-intro");sessionStorage.setItem("alIntro","1")}catch(e){}</script>
+<div class="intro" aria-hidden="true">
+  <div class="dirty"><span>ALVURA</span></div>
+  <div class="clean">
+    <svg class="big" viewBox="0 0 46 46"><circle cx="23" cy="23" r="21.5" fill="#0f3a2e" stroke="#8fd9b6" stroke-width="1.2"/><path d="M23 9.5C23 9.5 14 20 14 26.5a9 9 0 0 0 18 0C32 20 23 9.5 23 9.5Z" fill="none" stroke="#8fd9b6" stroke-width="1.8" stroke-linejoin="round"/><path d="M18.8 27.5a4.4 4.4 0 0 0 4.2 4" stroke="#8fd9b6" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M33.5 8c.3 2.6 1.6 3.9 4.2 4.2-2.6.3-3.9 1.6-4.2 4.2-.3-2.6-1.6-3.9-4.2-4.2 2.6-.3 3.9-1.6 4.2-4.2Z" fill="#fff"/></svg>
+    <div class="name">ALVURA</div>
+    <div class="sub" data-i18n="k0">Limpeza Especializada</div>
+    <span class="spark" style="left:30%;top:34%;--dl:1.65s"><svg viewBox="0 0 24 24"><path d="M12 0C13 8 16 11 24 12 16 13 13 16 12 24 11 16 8 13 0 12 8 11 11 8 12 0Z"/></svg></span>
+    <span class="spark" style="left:68%;top:30%;--dl:1.85s"><svg viewBox="0 0 24 24"><path d="M12 0C13 8 16 11 24 12 16 13 13 16 12 24 11 16 8 13 0 12 8 11 11 8 12 0Z"/></svg></span>
+    <span class="spark" style="left:62%;top:66%;--dl:2.05s"><svg viewBox="0 0 24 24"><path d="M12 0C13 8 16 11 24 12 16 13 13 16 12 24 11 16 8 13 0 12 8 11 11 8 12 0Z"/></svg></span>
+    <span class="spark" style="left:36%;top:64%;--dl:1.95s"><svg viewBox="0 0 24 24"><path d="M12 0C13 8 16 11 24 12 16 13 13 16 12 24 11 16 8 13 0 12 8 11 11 8 12 0Z"/></svg></span>
+  </div>
+  <div class="squeegee"></div>
+</div>
+
+<header id="header">
+  <div class="container nav">
+    <a href="#inicio" class="logo"><span class="mark"><svg viewBox="0 0 46 46"><circle cx="23" cy="23" r="21.5" fill="#0f3a2e" stroke="#8fd9b6" stroke-width="1.2"/><path d="M23 9.5C23 9.5 14 20 14 26.5a9 9 0 0 0 18 0C32 20 23 9.5 23 9.5Z" fill="none" stroke="#8fd9b6" stroke-width="1.8" stroke-linejoin="round"/><path d="M18.8 27.5a4.4 4.4 0 0 0 4.2 4" stroke="#8fd9b6" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M33.5 8c.3 2.6 1.6 3.9 4.2 4.2-2.6.3-3.9 1.6-4.2 4.2-.3-2.6-1.6-3.9-4.2-4.2 2.6-.3 3.9-1.6 4.2-4.2Z" fill="#fff"/></svg></span><span><strong>ALVURA</strong><small data-i18n="k0">Limpeza Especializada</small></span></a>
+    <ul id="menu">
+      <li><a href="#servicos" data-i18n="k1">Serviços</a></li>
+      <li><a href="#resultados" data-i18n="k2">Resultados</a></li>
+      <li><a href="#como" data-i18n="k3">Como funciona</a></li>
+      <li><a href="#planos" data-i18n="k4">Preços</a></li>
+      <li><a href="#contactos" data-i18n="k5">Contactos</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang" id="lang">
+        <button type="button" class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+          <img class="flag" id="langFlag" src="https://flagcdn.com/w40/pt.png" alt="" width="22" height="16"><span id="langCode">PT</span><span class="caret">▾</span>
+        </button>
+        <ul class="lang-menu" id="langMenu">
+          <li><button type="button" data-lang="pt"><img class="flag" src="https://flagcdn.com/w40/pt.png" alt="" width="22" height="16">Português</button></li>
+          <li><button type="button" data-lang="en"><img class="flag" src="https://flagcdn.com/w40/gb.png" alt="" width="22" height="16">English</button></li>
+          <li><button type="button" data-lang="es"><img class="flag" src="https://flagcdn.com/w40/es.png" alt="" width="22" height="16">Español</button></li>
+          <li><button type="button" data-lang="fr"><img class="flag" src="https://flagcdn.com/w40/fr.png" alt="" width="22" height="16">Français</button></li>
+          <li><button type="button" data-lang="it"><img class="flag" src="https://flagcdn.com/w40/it.png" alt="" width="22" height="16">Italiano</button></li>
+          <li><button type="button" data-lang="de"><img class="flag" src="https://flagcdn.com/w40/de.png" alt="" width="22" height="16">Deutsch</button></li>
+          <li><button type="button" data-lang="uk"><img class="flag" src="https://flagcdn.com/w40/ua.png" alt="" width="22" height="16">Українська</button></li>
+          <li><button type="button" data-lang="ru"><img class="flag" src="https://flagcdn.com/w40/ru.png" alt="" width="22" height="16">Русский</button></li>
+          <li><button type="button" data-lang="ja"><img class="flag" src="https://flagcdn.com/w40/jp.png" alt="" width="22" height="16">日本語</button></li>
+          <li><button type="button" data-lang="zh"><img class="flag" src="https://flagcdn.com/w40/cn.png" alt="" width="22" height="16">中文</button></li>
+        </ul>
+      </div>
+
+      <a href="#contactos" class="btn btn-mint" data-i18n="k6">Pedir orçamento grátis</a>
+      <button class="menu-toggle" aria-label="Abrir menu" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero dark" id="inicio">
+  <div class="slides">
+    <div class="slide on"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=80" alt="" fetchpriority="high"></div>
+    <div class="slide"><img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=2400&q=80" alt=""></div>
+    <div class="slide"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2400&q=80" alt=""></div>
+  </div>
+  <div class="hero-shade"></div>
+  <div class="container">
+    <span class="eyebrow" data-i18n="k7">Limpeza especializada · Lisboa</span>
+    <h1 data-i18n="k8">Espaços impecáveis, <em>sem preocupações.</em></h1>
+    <p data-i18n="k9">Limpeza profissional para casas, escritórios e espaços comerciais. Equipas formadas, produtos certificados e resultados que se notam.</p>
+    <div class="hero-actions">
+      <a href="#contactos" class="btn btn-mint" data-i18n="k6">Pedir orçamento grátis</a>
+      <a href="#servicos" class="btn btn-line" data-i18n="k10">Ver serviços</a>
+    </div>
+    <div class="hero-facts">
+      <div><strong data-count="15">15</strong><span data-i18n="k11">Anos de experiência</span></div>
+      <div><strong data-count="40">40</strong><span data-i18n="k12">Profissionais na equipa</span></div>
+      <div><strong><span data-count="98">98</span>%</strong><span data-i18n="k13">Clientes que voltam a contratar</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="k1">Serviços</span>
+      <h2 data-i18n="k14">Limpeza à medida <em>de cada espaço</em></h2>
+      <p data-i18n="k15">Do apartamento ao escritório, do sofá à fachada: usamos o método, o equipamento e o produto certos para cada superfície.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc reveal"><div class="ph"><img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=700&q=75" alt=""></div><div class="svc-body"><h3 data-i18n="k16">Limpeza doméstica</h3><p data-i18n="k17">Limpeza regular ou pontual da sua casa, com a mesma equipa de confiança.</p></div></article>
+      <article class="svc reveal"><div class="ph"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=700&q=75" alt=""></div><div class="svc-body"><h3 data-i18n="k18">Escritórios e lojas</h3><p data-i18n="k19">Limpeza diária, semanal ou fora do horário de trabalho, sem interromper a sua atividade.</p></div></article>
+      <article class="svc reveal"><div class="ph"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=700&q=75" alt=""></div><div class="svc-body"><h3 data-i18n="k20">Limpeza pós-obra</h3><p data-i18n="k21">Remoção de pó fino, tinta, cimento e resíduos, para entregar a obra pronta a habitar.</p></div></article>
+      <article class="svc reveal"><div class="ph"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=700&q=75" alt=""></div><div class="svc-body"><h3 data-i18n="k22">Sofás e estofos</h3><p data-i18n="k23">Lavagem por injeção e extração que remove manchas, ácaros e odores.</p></div></article>
+      <article class="svc reveal"><div class="ph"><img src="https://images.unsplash.com/photo-1600166898405-da9535204843?auto=format&fit=crop&w=700&q=75" alt=""></div><div class="svc-body"><h3 data-i18n="k24">Tapetes e alcatifas</h3><p data-i18n="k25">Limpeza profunda no local ou nas nossas instalações, com secagem rápida.</p></div></article>
+      <article class="svc reveal"><div class="ph"><img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=700&q=75" alt=""></div><div class="svc-body"><h3 data-i18n="k26">Vidros e fachadas</h3><p data-i18n="k27">Vidros, montras e fachadas em altura, com equipamento e seguro adequados.</p></div></article>
+      <article class="svc reveal"><div class="ph"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=700&q=75" alt=""></div><div class="svc-body"><h3 data-i18n="k28">Limpeza profunda</h3><p data-i18n="k29">Ideal para mudanças, entrada em casa nova ou fim de arrendamento.</p></div></article>
+      <article class="svc reveal"><div class="ph"><img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=700&q=75" alt=""></div><div class="svc-body"><h3 data-i18n="k30">Condomínios</h3><p data-i18n="k31">Escadas, elevadores, garagens e zonas comuns, com plano de limpeza fixo.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ANTES E DEPOIS -->
+<section class="dark" id="resultados">
+  <div class="container ba-grid">
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="k2">Resultados</span>
+      <h2 data-i18n="k32">A diferença <em>vê-se.</em></h2>
+      <p data-i18n="k33">Arraste a barra para comparar o antes e o depois de uma limpeza profunda feita pela nossa equipa.</p>
+      <ul class="ba-list">
+        <li data-i18n="k34">Superfícies desengorduradas e desinfetadas</li>
+        <li data-i18n="k35">Juntas, cantos e rodapés limpos ao pormenor</li>
+        <li data-i18n="k36">Vidros sem marcas e pavimentos tratados</li>
+      </ul>
+    </div>
+    <div class="ba reveal" id="ba">
+      <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1600&q=80" alt="">
+      <div class="ba-before"><img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1600&q=80" alt=""></div>
+      <span class="ba-line"></span>
+      <span class="lab l" data-i18n="k37">Antes</span><span class="lab r" data-i18n="k38">Depois</span>
+      <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois">
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section id="como">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="k3">Como funciona</span>
+      <h2 data-i18n="k39">Simples, rápido <em>e sem surpresas</em></h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="n">01</div><h3 data-i18n="k40">Pedido</h3><p data-i18n="k41">Diga-nos o que precisa pelo formulário, telefone ou WhatsApp.</p></div>
+      <div class="step reveal"><div class="n">02</div><h3 data-i18n="k42">Orçamento</h3><p data-i18n="k43">Enviamos um orçamento fechado em 24 horas. Em obras e empresas, fazemos uma visita gratuita.</p></div>
+      <div class="step reveal"><div class="n">03</div><h3 data-i18n="k44">Limpeza</h3><p data-i18n="k45">A equipa chega à hora marcada, com todo o equipamento e produtos.</p></div>
+      <div class="step reveal"><div class="n">04</div><h3 data-i18n="k46">Verificação</h3><p data-i18n="k47">Revemos o trabalho consigo. Se algo não estiver perfeito, voltamos sem custos.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PORQUÊ NÓS -->
+<section class="soft why">
+  <div class="container why-grid">
+    <div class="ph why-img reveal"><img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=1100&q=75" alt=""></div>
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="k48">Porquê a Alvura</span>
+      <h2 data-i18n="k49">Confiança em <em>cada pormenor</em></h2>
+      <p data-i18n="k50">Entramos na sua casa e na sua empresa. Por isso, trabalhamos com rigor, discrição e total transparência.</p>
+      <div class="feats">
+        <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.8c1.9.7 3.1 2.4 3.5 5.2"/></svg></div><h3 data-i18n="k51">Equipas próprias</h3><p data-i18n="k52">Profissionais contratados, formados e identificados. Nunca subcontratamos.</p></div>
+        <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 19c0-8 5-13 15-14-1 10-6 15-14 15"/><path d="M5 19l7-7"/></svg></div><h3 data-i18n="k53">Produtos ecológicos</h3><p data-i18n="k54">Certificados e seguros para crianças, animais e todas as superfícies.</p></div>
+        <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3 data-i18n="k55">Seguro de responsabilidade civil</h3><p data-i18n="k56">Todos os serviços estão cobertos, para sua total tranquilidade.</p></div>
+        <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16.5 9.5"/></svg></div><h3 data-i18n="k57">Garantia de satisfação</h3><p data-i18n="k58">Se não ficar satisfeito, voltamos e repetimos sem qualquer custo.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PREÇOS -->
+<section id="planos">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow" data-i18n="k4">Preços</span>
+      <h2 data-i18n="k59">Preços claros, <em>orçamento gratuito</em></h2>
+      <p data-i18n="k60">Valores de referência para limpeza doméstica. Para os restantes serviços, enviamos um orçamento à medida.</p>
+    </div>
+    <div class="plan-grid">
+      <div class="plan reveal">
+        <h3 data-i18n="k61">Pontual</h3><p class="for" data-i18n="k62">Uma limpeza completa, quando precisar</p>
+        <span class="from" data-i18n="k63">A partir de</span><div class="price">60 €</div><span class="pp" data-i18n="k64">por serviço</span>
+        <ul><li data-i18n="k65">Até 4 horas de limpeza</li><li data-i18n="k66">Produtos e equipamento incluídos</li><li data-i18n="k67">Cozinha, casas de banho e quartos</li><li data-i18n="k68">Marcação em 48 horas</li></ul>
+        <a href="#contactos" class="btn btn-outline" data-i18n="k69">Pedir orçamento</a>
+      </div>
+      <div class="plan featured reveal">
+        <span class="badge" data-i18n="k70">Mais escolhido</span>
+        <h3 data-i18n="k71">Regular</h3><p class="for" data-i18n="k72">Semanal ou quinzenal, sempre a mesma equipa</p>
+        <span class="from" data-i18n="k63">A partir de</span><div class="price">14 €</div><span class="pp" data-i18n="k73">por hora</span>
+        <ul><li data-i18n="k66">Produtos e equipamento incluídos</li><li data-i18n="k74">A mesma equipa em todas as visitas</li><li data-i18n="k75">Horário fixo à sua escolha</li><li data-i18n="k76">Sem fidelização</li></ul>
+        <a href="#contactos" class="btn btn-mint" data-i18n="k69">Pedir orçamento</a>
+      </div>
+      <div class="plan reveal">
+        <h3 data-i18n="k77">Empresas</h3><p class="for" data-i18n="k78">Escritórios, lojas, clínicas e condomínios</p>
+        <span class="from" data-i18n="k79">Preço</span><div class="price" data-i18n="k80">À medida</div><span class="pp" data-i18n="k81">após visita gratuita</span>
+        <ul><li data-i18n="k82">Plano de limpeza personalizado</li><li data-i18n="k83">Serviço fora do horário de trabalho</li><li data-i18n="k84">Gestor de cliente dedicado</li><li data-i18n="k85">Fatura mensal</li></ul>
+        <a href="#contactos" class="btn btn-outline" data-i18n="k69">Pedir orçamento</a>
+      </div>
+    </div>
+    <p class="plans-note" data-i18n="k86">Pós-obra, sofás, tapetes e vidros com orçamento gratuito após descrição ou visita.</p>
+  </div>
+</section>
+
+<!-- OPINIÕES -->
+<section class="soft">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow" data-i18n="k87">Opiniões</span>
+      <h2 data-i18n="k88">Clientes que <em>confiam em nós</em></h2>
+    </div>
+    <div class="r-grid">
+      <div class="review reveal"><div class="stars">★★★★★</div><p data-i18n="k89">“Contratámos a limpeza pós-obra do nosso apartamento. Entregaram tudo impecável, nem parecia que tinha havido obras.”</p><strong>Pedro e Ana L.</strong><small data-i18n="k90">Limpeza pós-obra · Lisboa</small></div>
+      <div class="review reveal"><div class="stars">★★★★★</div><p data-i18n="k91">“Há dois anos que limpam o nosso escritório. Pontuais, discretos e sempre com um resultado excelente.”</p><strong>Miguel R.</strong><small data-i18n="k92">Escritório · 25 pessoas</small></div>
+      <div class="review reveal"><div class="stars">★★★★★</div><p data-i18n="k93">“O sofá parecia novo depois da limpeza. Tiraram manchas que eu já achava impossíveis.”</p><strong>Sofia C.</strong><small data-i18n="k94">Sofás e estofos · Oeiras</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow" data-i18n="k95">Perguntas frequentes</span>
+      <h2 data-i18n="k96">Tem dúvidas?</h2>
+    </div>
+    <div class="faq reveal">
+      <details open><summary data-i18n="k97">Preciso de estar presente durante a limpeza?</summary><p data-i18n="k98">Não. Muitos clientes deixam-nos a chave ou o código de acesso. Todas as equipas são identificadas e de confiança.</p></details>
+      <details><summary data-i18n="k99">Os produtos são seguros para crianças e animais?</summary><p data-i18n="k100">Sim. Usamos produtos ecológicos e certificados. Se tiver alguma alergia ou preferência, adaptamos os produtos.</p></details>
+      <details><summary data-i18n="k101">Levam os produtos e o equipamento?</summary><p data-i18n="k102">Sim, levamos tudo o que é necessário, incluindo aspiradores profissionais e máquinas de lavagem.</p></details>
+      <details><summary data-i18n="k103">Em que zonas trabalham?</summary><p data-i18n="k104">Em Lisboa e arredores: Oeiras, Cascais, Sintra, Amadora, Loures, Odivelas e Almada.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="dark contact" id="contactos">
+  <div class="container contact-grid">
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="k5">Contactos</span>
+      <h2 data-i18n="k105">Peça o seu orçamento gratuito</h2>
+      <p data-i18n="k106">Diga-nos o tipo de espaço e o serviço que procura. Enviamos um orçamento fechado em menos de 24 horas.</p>
+      <div class="c-line"><strong data-i18n="k107">Morada</strong><span>Avenida Almirante Reis, 210<br>1000-056 Lisboa</span></div>
+      <div class="c-line"><strong data-i18n="k108">Telefone</strong><span>+351 21 456 7890 · +351 912 345 678</span></div>
+      <div class="c-line"><strong>Email</strong><span>geral@alvura.pt</span></div>
+      <div class="c-line"><strong data-i18n="k109">Horário</strong><span data-i18n="k110">Segunda a sábado, 8h–20h</span></div>
+    </div>
+    <form class="form reveal" id="quoteForm">
+      <h3 data-i18n="k111">Pedido de orçamento</h3>
+      <div class="fields">
+        <div class="field"><label for="f-name" data-i18n="k112">Nome</label><input id="f-name" required autocomplete="name"></div>
+        <div class="field"><label for="f-svc" data-i18n="k113">Serviço</label>
+          <select id="f-svc">
+            <option value="Limpeza doméstica" data-i18n="k16">Limpeza doméstica</option><option value="Escritórios e lojas" data-i18n="k18">Escritórios e lojas</option><option value="Limpeza pós-obra" data-i18n="k20">Limpeza pós-obra</option><option value="Sofás e estofos" data-i18n="k22">Sofás e estofos</option>
+            <option value="Tapetes e alcatifas" data-i18n="k24">Tapetes e alcatifas</option><option value="Vidros e fachadas" data-i18n="k26">Vidros e fachadas</option><option value="Limpeza profunda" data-i18n="k28">Limpeza profunda</option><option value="Condomínios" data-i18n="k30">Condomínios</option>
+          </select></div>
+        <div class="field"><label for="f-space" data-i18n="k114">Tipo de espaço</label>
+          <select id="f-space"><option value="Casa ou apartamento" data-i18n="k115">Casa ou apartamento</option><option value="Escritório" data-i18n="k116">Escritório</option><option value="Loja ou restaurante" data-i18n="k117">Loja ou restaurante</option><option value="Condomínio" data-i18n="k118">Condomínio</option><option value="Outro" data-i18n="k119">Outro</option></select></div>
+        <div class="field"><label for="f-area" data-i18n="k120">Área aproximada (m²)</label><input id="f-area" type="number" min="10" max="10000"></div>
+        <div class="field"><label for="f-town" data-i18n="k121">Localidade</label><input id="f-town" required></div>
+        <div class="field"><label for="f-date" data-i18n="k122">Data preferida</label><input id="f-date" type="date"></div>
+        <div class="field full"><label for="f-msg" data-i18n="k123">Mensagem (opcional)</label><textarea id="f-msg"></textarea></div>
+      </div>
+      <button type="submit" class="btn btn-wa" data-i18n="k124">💬 Pedir orçamento por WhatsApp</button>
+      <p class="form-note" data-i18n="k125">Os seus dados são usados apenas para responder ao seu pedido.</p>
+    </form>
+  </div>
+</section>
+
+<div class="map"><iframe src="https://www.google.com/maps?q=Lisboa&output=embed" loading="lazy" title="Mapa"></iframe></div>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div><a href="#inicio" class="logo"><span class="mark"><svg viewBox="0 0 46 46"><circle cx="23" cy="23" r="21.5" fill="#0f3a2e" stroke="#8fd9b6" stroke-width="1.2"/><path d="M23 9.5C23 9.5 14 20 14 26.5a9 9 0 0 0 18 0C32 20 23 9.5 23 9.5Z" fill="none" stroke="#8fd9b6" stroke-width="1.8" stroke-linejoin="round"/><path d="M18.8 27.5a4.4 4.4 0 0 0 4.2 4" stroke="#8fd9b6" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M33.5 8c.3 2.6 1.6 3.9 4.2 4.2-2.6.3-3.9 1.6-4.2 4.2-.3-2.6-1.6-3.9-4.2-4.2 2.6-.3 3.9-1.6 4.2-4.2Z" fill="#fff"/></svg></span><span><strong>ALVURA</strong><small data-i18n="k0">Limpeza Especializada</small></span></a><p data-i18n="k126">Limpeza especializada em Lisboa e arredores, para casas, empresas e condomínios.</p></div>
+      <div><h4 data-i18n="k127">Navegação</h4><ul><li><a href="#servicos" data-i18n="k1">Serviços</a></li><li><a href="#resultados" data-i18n="k2">Resultados</a></li><li><a href="#planos" data-i18n="k4">Preços</a></li><li><a href="#contactos" data-i18n="k5">Contactos</a></li></ul></div>
+      <div><h4 data-i18n="k128">Siga-nos</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li><li><a href="#">LinkedIn</a></li></ul></div>
+    </div>
+    <div class="legal">© <span id="y"></span> Alvura · <span data-i18n="k129">Todos os direitos reservados</span></div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/351912345678" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+
+<script>
+  const header=document.getElementById('header');
+  const onScroll=()=>header.classList.toggle('scrolled',scrollY>60);
+  addEventListener('scroll',onScroll);onScroll();
+  document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
+
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  document.querySelectorAll('.ph img').forEach(img=>{
+    const hide=()=>img.style.visibility='hidden';
+    if(img.complete&&img.naturalWidth===0)hide();else img.addEventListener('error',hide);
+  });
+
+  const noIntro=document.documentElement.classList.contains('no-intro');
+  setTimeout(()=>{const i=document.querySelector('.intro');if(i)i.remove()},4000);
+
+  // Fotografias de fundo a trocar
+  const slides=[...document.querySelectorAll('.slide')];let cur=0;
+  setTimeout(function next(){slides[cur].classList.remove('on');cur=(cur+1)%slides.length;slides[cur].classList.add('on');setTimeout(next,6000)},noIntro?6000:8800);
+
+  // Números a contar
+  setTimeout(()=>{
+    document.querySelectorAll('[data-count]').forEach(el=>{
+      const end=+el.dataset.count,t0=performance.now(),dur=1600;
+      const step=t=>{const k=Math.min((t-t0)/dur,1);el.textContent=Math.round(end*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(step)};
+      el.textContent='0';requestAnimationFrame(step);
+    });
+  },noIntro?1300:4500);
+
+  // Antes e depois
+  const ba=document.getElementById('ba');
+  ba.querySelector('input').addEventListener('input',e=>ba.style.setProperty('--p',e.target.value+'%'));
+
+  // Pedido de orçamento: abre o WhatsApp com a mensagem já escrita (sempre em português)
+  document.getElementById('f-date').min=new Date().toISOString().slice(0,10);
+  document.getElementById('quoteForm').addEventListener('submit',e=>{
+    e.preventDefault();
+    const v=id=>document.getElementById(id).value.trim();
+    let msg=`Olá! Gostaria de pedir um orçamento de limpeza.\nNome: ${v('f-name')}\nServiço: ${v('f-svc')}\nTipo de espaço: ${v('f-space')}\nLocalidade: ${v('f-town')}`;
+    if(v('f-area'))msg+=`\nÁrea aproximada: ${v('f-area')} m²`;
+    if(v('f-date')){const [y,m,d]=v('f-date').split('-');msg+=`\nData preferida: ${d}/${m}/${y}`;}
+    if(v('f-msg'))msg+=`\nMensagem: ${v('f-msg')}`;
+    window.open('https://wa.me/351912345678?text='+encodeURIComponent(msg),'_blank');
+  });
+
+  document.getElementById('y').textContent=new Date().getFullYear();
+
+  // ---------- IDIOMAS ----------
+  const I18N = {"en": {"k0": "Specialist Cleaning", "k1": "Services", "k2": "Results", "k3": "How it works", "k4": "Prices", "k5": "Contact", "k6": "Get a free quote", "k7": "Specialist cleaning · Lisbon", "k8": "Spotless spaces, <em>zero hassle.</em>", "k9": "Professional cleaning for homes, offices and commercial spaces. Trained teams, certified products and results you can see.", "k10": "See services", "k11": "Years of experience", "k12": "Professionals on the team", "k13": "Clients who book again", "k14": "Cleaning tailored <em>to every space</em>", "k15": "From flats to offices, from sofas to façades: we use the right method, equipment and product for every surface.", "k16": "Home cleaning", "k17": "Regular or one-off cleaning of your home, with the same trusted team.", "k18": "Offices and shops", "k19": "Daily, weekly or out-of-hours cleaning, without interrupting your business.", "k20": "Post-construction cleaning", "k21": "Removal of fine dust, paint, cement and debris, so the property is ready to move into.", "k22": "Sofas and upholstery", "k23": "Hot-water extraction cleaning that removes stains, dust mites and odours.", "k24": "Rugs and carpets", "k25": "Deep cleaning on site or at our facilities, with fast drying.", "k26": "Windows and façades", "k27": "Windows, shopfronts and high-level façades, with the right equipment and insurance.", "k28": "Deep cleaning", "k29": "Ideal for moving house, a new home or the end of a tenancy.", "k30": "Residential buildings", "k31": "Stairs, lifts, garages and common areas, with a fixed cleaning plan.", "k32": "You can <em>see the difference.</em>", "k33": "Drag the slider to compare the before and after of a deep clean by our team.", "k34": "Degreased and disinfected surfaces", "k35": "Grout, corners and skirting boards cleaned in detail", "k36": "Streak-free glass and treated floors", "k37": "Before", "k38": "After", "k39": "Simple, fast <em>and no surprises</em>", "k40": "Request", "k41": "Tell us what you need via the form, phone or WhatsApp.", "k42": "Quote", "k43": "We send a fixed quote within 24 hours. For building works and businesses, we do a free visit.", "k44": "Cleaning", "k45": "The team arrives on time, with all the equipment and products.", "k46": "Check", "k47": "We review the work with you. If anything isn't perfect, we come back at no cost.", "k48": "Why Alvura", "k49": "Trust in <em>every detail</em>", "k50": "We come into your home and your business. That's why we work with rigour, discretion and complete transparency.", "k51": "Our own teams", "k52": "Employed, trained and identified professionals. We never subcontract.", "k53": "Eco-friendly products", "k54": "Certified and safe for children, pets and every surface.", "k55": "Liability insurance", "k56": "Every service is covered, for complete peace of mind.", "k57": "Satisfaction guarantee", "k58": "If you're not satisfied, we come back and redo it at no cost.", "k59": "Clear prices, <em>free quote</em>", "k60": "Guide prices for home cleaning. For other services, we send a tailored quote.", "k61": "One-off", "k62": "A complete clean, whenever you need it", "k63": "From", "k64": "per service", "k65": "Up to 4 hours of cleaning", "k66": "Products and equipment included", "k67": "Kitchen, bathrooms and bedrooms", "k68": "Booking within 48 hours", "k69": "Request a quote", "k70": "Most popular", "k71": "Regular", "k72": "Weekly or fortnightly, always the same team", "k73": "per hour", "k74": "The same team on every visit", "k75": "A fixed time of your choice", "k76": "No commitment", "k77": "Businesses", "k78": "Offices, shops, clinics and residential buildings", "k79": "Price", "k80": "Tailored", "k81": "after a free visit", "k82": "Personalised cleaning plan", "k83": "Out-of-hours service", "k84": "Dedicated account manager", "k85": "Monthly invoice", "k86": "Post-construction, sofas, rugs and windows quoted free of charge after a description or visit.", "k87": "Reviews", "k88": "Clients who <em>trust us</em>", "k89": "“We hired the post-construction clean for our flat. Everything was spotless, you'd never know there had been building work.”", "k90": "Post-construction cleaning · Lisbon", "k91": "“They've been cleaning our office for two years. Punctual, discreet and always an excellent result.”", "k92": "Office · 25 people", "k93": "“The sofa looked new after the clean. They removed stains I thought were impossible.”", "k94": "Sofas and upholstery · Oeiras", "k95": "FAQ", "k96": "Any questions?", "k97": "Do I need to be there during the cleaning?", "k98": "No. Many clients leave us a key or access code. All our teams are identified and trustworthy.", "k99": "Are the products safe for children and pets?", "k100": "Yes. We use eco-friendly, certified products. If you have any allergy or preference, we adapt the products.", "k101": "Do you bring the products and equipment?", "k102": "Yes, we bring everything needed, including professional vacuum cleaners and washing machines.", "k103": "Which areas do you cover?", "k104": "Lisbon and surrounding areas: Oeiras, Cascais, Sintra, Amadora, Loures, Odivelas and Almada.", "k105": "Get your free quote", "k106": "Tell us the type of space and the service you need. We'll send a fixed quote within 24 hours.", "k107": "Address", "k108": "Phone", "k109": "Opening hours", "k110": "Monday to Saturday, 8am–8pm", "k111": "Quote request", "k112": "Name", "k113": "Service", "k114": "Type of space", "k115": "House or flat", "k116": "Office", "k117": "Shop or restaurant", "k118": "Residential building", "k119": "Other", "k120": "Approximate area (m²)", "k121": "Town", "k122": "Preferred date", "k123": "Message (optional)", "k124": "💬 Request a quote via WhatsApp", "k125": "Your details are used only to reply to your request.", "k126": "Specialist cleaning in Lisbon and surrounding areas, for homes, businesses and residential buildings.", "k127": "Navigation", "k128": "Follow us", "k129": "All rights reserved"}, "es": {"k0": "Limpieza Especializada", "k1": "Servicios", "k2": "Resultados", "k3": "Cómo funciona", "k4": "Precios", "k5": "Contacto", "k6": "Pedir presupuesto gratis", "k7": "Limpieza especializada · Lisboa", "k8": "Espacios impecables, <em>sin preocupaciones.</em>", "k9": "Limpieza profesional para casas, oficinas y locales comerciales. Equipos formados, productos certificados y resultados que se notan.", "k10": "Ver servicios", "k11": "Años de experiencia", "k12": "Profesionales en el equipo", "k13": "Clientes que repiten", "k14": "Limpieza a medida <em>de cada espacio</em>", "k15": "Del piso a la oficina, del sofá a la fachada: usamos el método, el equipo y el producto adecuados para cada superficie.", "k16": "Limpieza doméstica", "k17": "Limpieza regular o puntual de tu casa, con el mismo equipo de confianza.", "k18": "Oficinas y tiendas", "k19": "Limpieza diaria, semanal o fuera del horario laboral, sin interrumpir tu actividad.", "k20": "Limpieza de fin de obra", "k21": "Eliminación de polvo fino, pintura, cemento y restos, para entregar la obra lista para vivir.", "k22": "Sofás y tapicerías", "k23": "Lavado por inyección y extracción que elimina manchas, ácaros y olores.", "k24": "Alfombras y moquetas", "k25": "Limpieza profunda en el lugar o en nuestras instalaciones, con secado rápido.", "k26": "Cristales y fachadas", "k27": "Cristales, escaparates y fachadas en altura, con el equipo y el seguro adecuados.", "k28": "Limpieza a fondo", "k29": "Ideal para mudanzas, entrada en casa nueva o fin de alquiler.", "k30": "Comunidades de vecinos", "k31": "Escaleras, ascensores, garajes y zonas comunes, con un plan de limpieza fijo.", "k32": "La diferencia <em>se nota.</em>", "k33": "Arrastra la barra para comparar el antes y el después de una limpieza a fondo de nuestro equipo.", "k34": "Superficies desengrasadas y desinfectadas", "k35": "Juntas, rincones y rodapiés limpios al detalle", "k36": "Cristales sin marcas y suelos tratados", "k37": "Antes", "k38": "Después", "k39": "Sencillo, rápido <em>y sin sorpresas</em>", "k40": "Solicitud", "k41": "Dinos qué necesitas por el formulario, teléfono o WhatsApp.", "k42": "Presupuesto", "k43": "Enviamos un presupuesto cerrado en 24 horas. En obras y empresas, hacemos una visita gratuita.", "k44": "Limpieza", "k45": "El equipo llega a la hora acordada, con todo el equipamiento y los productos.", "k46": "Revisión", "k47": "Revisamos el trabajo contigo. Si algo no está perfecto, volvemos sin coste.", "k48": "Por qué Alvura", "k49": "Confianza en <em>cada detalle</em>", "k50": "Entramos en tu casa y en tu empresa. Por eso trabajamos con rigor, discreción y total transparencia.", "k51": "Equipos propios", "k52": "Profesionales contratados, formados e identificados. Nunca subcontratamos.", "k53": "Productos ecológicos", "k54": "Certificados y seguros para niños, mascotas y todas las superficies.", "k55": "Seguro de responsabilidad civil", "k56": "Todos los servicios están cubiertos, para tu total tranquilidad.", "k57": "Garantía de satisfacción", "k58": "Si no quedas satisfecho, volvemos y lo repetimos sin ningún coste.", "k59": "Precios claros, <em>presupuesto gratis</em>", "k60": "Precios orientativos para limpieza doméstica. Para el resto de servicios, enviamos un presupuesto a medida.", "k61": "Puntual", "k62": "Una limpieza completa, cuando la necesites", "k63": "Desde", "k64": "por servicio", "k65": "Hasta 4 horas de limpieza", "k66": "Productos y equipamiento incluidos", "k67": "Cocina, baños y dormitorios", "k68": "Cita en 48 horas", "k69": "Pedir presupuesto", "k70": "El más elegido", "k71": "Regular", "k72": "Semanal o quincenal, siempre el mismo equipo", "k73": "por hora", "k74": "El mismo equipo en todas las visitas", "k75": "Horario fijo a tu elección", "k76": "Sin permanencia", "k77": "Empresas", "k78": "Oficinas, tiendas, clínicas y comunidades", "k79": "Precio", "k80": "A medida", "k81": "tras una visita gratuita", "k82": "Plan de limpieza personalizado", "k83": "Servicio fuera del horario laboral", "k84": "Gestor de cliente dedicado", "k85": "Factura mensual", "k86": "Fin de obra, sofás, alfombras y cristales con presupuesto gratuito tras descripción o visita.", "k87": "Opiniones", "k88": "Clientes que <em>confían en nosotros</em>", "k89": "“Contratamos la limpieza de fin de obra de nuestro piso. Lo entregaron todo impecable, ni parecía que hubiera habido obras.”", "k90": "Limpieza de fin de obra · Lisboa", "k91": "“Llevan dos años limpiando nuestra oficina. Puntuales, discretos y siempre con un resultado excelente.”", "k92": "Oficina · 25 personas", "k93": "“El sofá parecía nuevo después de la limpieza. Quitaron manchas que yo creía imposibles.”", "k94": "Sofás y tapicerías · Oeiras", "k95": "Preguntas frecuentes", "k96": "¿Tienes dudas?", "k97": "¿Tengo que estar presente durante la limpieza?", "k98": "No. Muchos clientes nos dejan la llave o el código de acceso. Todos los equipos están identificados y son de confianza.", "k99": "¿Los productos son seguros para niños y mascotas?", "k100": "Sí. Usamos productos ecológicos y certificados. Si tienes alguna alergia o preferencia, adaptamos los productos.", "k101": "¿Lleváis los productos y el equipamiento?", "k102": "Sí, llevamos todo lo necesario, incluidos aspiradores profesionales y máquinas de lavado.", "k103": "¿En qué zonas trabajáis?", "k104": "En Lisboa y alrededores: Oeiras, Cascais, Sintra, Amadora, Loures, Odivelas y Almada.", "k105": "Pide tu presupuesto gratuito", "k106": "Dinos el tipo de espacio y el servicio que buscas. Enviamos un presupuesto cerrado en menos de 24 horas.", "k107": "Dirección", "k108": "Teléfono", "k109": "Horario", "k110": "Lunes a sábado, 8:00–20:00", "k111": "Solicitud de presupuesto", "k112": "Nombre", "k113": "Servicio", "k114": "Tipo de espacio", "k115": "Casa o piso", "k116": "Oficina", "k117": "Tienda o restaurante", "k118": "Comunidad de vecinos", "k119": "Otro", "k120": "Superficie aproximada (m²)", "k121": "Localidad", "k122": "Fecha preferida", "k123": "Mensaje (opcional)", "k124": "💬 Pedir presupuesto por WhatsApp", "k125": "Tus datos se usan solo para responder a tu solicitud.", "k126": "Limpieza especializada en Lisboa y alrededores, para casas, empresas y comunidades de vecinos.", "k127": "Navegación", "k128": "Síguenos", "k129": "Todos los derechos reservados"}, "fr": {"k0": "Nettoyage Spécialisé", "k1": "Services", "k2": "Résultats", "k3": "Comment ça marche", "k4": "Tarifs", "k5": "Contact", "k6": "Devis gratuit", "k7": "Nettoyage spécialisé · Lisbonne", "k8": "Des espaces impeccables, <em>sans souci.</em>", "k9": "Nettoyage professionnel pour maisons, bureaux et locaux commerciaux. Équipes formées, produits certifiés et résultats visibles.", "k10": "Voir les services", "k11": "Ans d'expérience", "k12": "Professionnels dans l'équipe", "k13": "Clients qui nous refont confiance", "k14": "Un nettoyage adapté <em>à chaque espace</em>", "k15": "De l'appartement au bureau, du canapé à la façade : nous utilisons la bonne méthode, le bon équipement et le bon produit pour chaque surface.", "k16": "Ménage à domicile", "k17": "Ménage régulier ou ponctuel de votre maison, avec la même équipe de confiance.", "k18": "Bureaux et commerces", "k19": "Nettoyage quotidien, hebdomadaire ou en dehors des heures de travail, sans interrompre votre activité.", "k20": "Nettoyage après travaux", "k21": "Élimination de la poussière fine, de la peinture, du ciment et des déchets, pour un logement prêt à habiter.", "k22": "Canapés et tissus", "k23": "Lavage par injection-extraction qui élimine taches, acariens et odeurs.", "k24": "Tapis et moquettes", "k25": "Nettoyage en profondeur sur place ou dans nos locaux, avec séchage rapide.", "k26": "Vitres et façades", "k27": "Vitres, vitrines et façades en hauteur, avec l'équipement et l'assurance adaptés.", "k28": "Grand nettoyage", "k29": "Idéal pour un déménagement, une nouvelle maison ou une fin de bail.", "k30": "Copropriétés", "k31": "Escaliers, ascenseurs, garages et parties communes, avec un plan de nettoyage fixe.", "k32": "La différence <em>se voit.</em>", "k33": "Faites glisser la barre pour comparer l'avant et l'après d'un grand nettoyage réalisé par notre équipe.", "k34": "Surfaces dégraissées et désinfectées", "k35": "Joints, coins et plinthes nettoyés dans le détail", "k36": "Vitres sans traces et sols traités", "k37": "Avant", "k38": "Après", "k39": "Simple, rapide <em>et sans surprises</em>", "k40": "Demande", "k41": "Dites-nous ce dont vous avez besoin via le formulaire, par téléphone ou WhatsApp.", "k42": "Devis", "k43": "Nous envoyons un devis ferme sous 24 heures. Pour les chantiers et les entreprises, nous faisons une visite gratuite.", "k44": "Nettoyage", "k45": "L'équipe arrive à l'heure prévue, avec tout l'équipement et les produits.", "k46": "Vérification", "k47": "Nous vérifions le travail avec vous. Si quelque chose n'est pas parfait, nous revenons sans frais.", "k48": "Pourquoi Alvura", "k49": "La confiance dans <em>chaque détail</em>", "k50": "Nous entrons chez vous et dans votre entreprise. C'est pourquoi nous travaillons avec rigueur, discrétion et une totale transparence.", "k51": "Équipes internes", "k52": "Des professionnels salariés, formés et identifiés. Nous ne sous-traitons jamais.", "k53": "Produits écologiques", "k54": "Certifiés et sans danger pour les enfants, les animaux et toutes les surfaces.", "k55": "Assurance responsabilité civile", "k56": "Toutes nos prestations sont couvertes, pour votre totale tranquillité.", "k57": "Satisfaction garantie", "k58": "Si vous n'êtes pas satisfait, nous revenons et recommençons sans aucun frais.", "k59": "Des tarifs clairs, <em>devis gratuit</em>", "k60": "Tarifs indicatifs pour le ménage à domicile. Pour les autres services, nous envoyons un devis sur mesure.", "k61": "Ponctuel", "k62": "Un nettoyage complet, quand vous en avez besoin", "k63": "À partir de", "k64": "par prestation", "k65": "Jusqu'à 4 heures de nettoyage", "k66": "Produits et équipement inclus", "k67": "Cuisine, salles de bains et chambres", "k68": "Rendez-vous sous 48 heures", "k69": "Demander un devis", "k70": "Le plus choisi", "k71": "Régulier", "k72": "Hebdomadaire ou bimensuel, toujours la même équipe", "k73": "de l'heure", "k74": "La même équipe à chaque visite", "k75": "Un horaire fixe de votre choix", "k76": "Sans engagement", "k77": "Entreprises", "k78": "Bureaux, commerces, cliniques et copropriétés", "k79": "Prix", "k80": "Sur mesure", "k81": "après une visite gratuite", "k82": "Plan de nettoyage personnalisé", "k83": "Service en dehors des heures de travail", "k84": "Interlocuteur dédié", "k85": "Facture mensuelle", "k86": "Après travaux, canapés, tapis et vitres : devis gratuit après description ou visite.", "k87": "Avis", "k88": "Des clients qui <em>nous font confiance</em>", "k89": "« Nous avons fait appel à eux pour le nettoyage après travaux de notre appartement. Tout était impeccable, on aurait dit qu'il n'y avait jamais eu de travaux. »", "k90": "Nettoyage après travaux · Lisbonne", "k91": "« Ils nettoient nos bureaux depuis deux ans. Ponctuels, discrets et toujours un excellent résultat. »", "k92": "Bureau · 25 personnes", "k93": "« Le canapé semblait neuf après le nettoyage. Ils ont enlevé des taches que je croyais impossibles. »", "k94": "Canapés et tissus · Oeiras", "k95": "Questions fréquentes", "k96": "Des questions ?", "k97": "Dois-je être présent pendant le nettoyage ?", "k98": "Non. Beaucoup de clients nous laissent la clé ou le code d'accès. Toutes nos équipes sont identifiées et de confiance.", "k99": "Les produits sont-ils sans danger pour les enfants et les animaux ?", "k100": "Oui. Nous utilisons des produits écologiques et certifiés. En cas d'allergie ou de préférence, nous adaptons les produits.", "k101": "Apportez-vous les produits et l'équipement ?", "k102": "Oui, nous apportons tout le nécessaire, y compris des aspirateurs professionnels et des machines de lavage.", "k103": "Dans quelles zones intervenez-vous ?", "k104": "À Lisbonne et ses environs : Oeiras, Cascais, Sintra, Amadora, Loures, Odivelas et Almada.", "k105": "Demandez votre devis gratuit", "k106": "Indiquez-nous le type d'espace et le service recherché. Nous envoyons un devis ferme en moins de 24 heures.", "k107": "Adresse", "k108": "Téléphone", "k109": "Horaires", "k110": "Du lundi au samedi, 8 h–20 h", "k111": "Demande de devis", "k112": "Nom", "k113": "Service", "k114": "Type d'espace", "k115": "Maison ou appartement", "k116": "Bureau", "k117": "Commerce ou restaurant", "k118": "Copropriété", "k119": "Autre", "k120": "Surface approximative (m²)", "k121": "Ville", "k122": "Date souhaitée", "k123": "Message (facultatif)", "k124": "💬 Demander un devis via WhatsApp", "k125": "Vos données servent uniquement à répondre à votre demande.", "k126": "Nettoyage spécialisé à Lisbonne et ses environs, pour maisons, entreprises et copropriétés.", "k127": "Navigation", "k128": "Suivez-nous", "k129": "Tous droits réservés"}, "it": {"k0": "Pulizie Specializzate", "k1": "Servizi", "k2": "Risultati", "k3": "Come funziona", "k4": "Prezzi", "k5": "Contatti", "k6": "Preventivo gratuito", "k7": "Pulizie specializzate · Lisbona", "k8": "Spazi impeccabili, <em>senza pensieri.</em>", "k9": "Pulizie professionali per case, uffici e locali commerciali. Squadre formate, prodotti certificati e risultati che si vedono.", "k10": "Vedi i servizi", "k11": "Anni di esperienza", "k12": "Professionisti nel team", "k13": "Clienti che tornano da noi", "k14": "Pulizie su misura <em>per ogni spazio</em>", "k15": "Dall'appartamento all'ufficio, dal divano alla facciata: usiamo il metodo, l'attrezzatura e il prodotto giusti per ogni superficie.", "k16": "Pulizie domestiche", "k17": "Pulizie regolari o occasionali della tua casa, con la stessa squadra di fiducia.", "k18": "Uffici e negozi", "k19": "Pulizie giornaliere, settimanali o fuori orario, senza interrompere la tua attività.", "k20": "Pulizie post-cantiere", "k21": "Rimozione di polvere fine, vernice, cemento e residui, per consegnare l'immobile pronto da abitare.", "k22": "Divani e imbottiti", "k23": "Lavaggio a iniezione-estrazione che elimina macchie, acari e odori.", "k24": "Tappeti e moquette", "k25": "Pulizia profonda sul posto o nella nostra sede, con asciugatura rapida.", "k26": "Vetri e facciate", "k27": "Vetri, vetrine e facciate in quota, con attrezzatura e assicurazione adeguate.", "k28": "Pulizia a fondo", "k29": "Ideale per traslochi, ingresso in una nuova casa o fine locazione.", "k30": "Condomini", "k31": "Scale, ascensori, garage e parti comuni, con un piano di pulizia fisso.", "k32": "La differenza <em>si vede.</em>", "k33": "Trascina la barra per confrontare il prima e il dopo di una pulizia a fondo del nostro team.", "k34": "Superfici sgrassate e disinfettate", "k35": "Fughe, angoli e battiscopa puliti nei dettagli", "k36": "Vetri senza aloni e pavimenti trattati", "k37": "Prima", "k38": "Dopo", "k39": "Semplice, veloce <em>e senza sorprese</em>", "k40": "Richiesta", "k41": "Dicci di cosa hai bisogno tramite il modulo, il telefono o WhatsApp.", "k42": "Preventivo", "k43": "Inviamo un preventivo fisso entro 24 ore. Per cantieri e aziende facciamo un sopralluogo gratuito.", "k44": "Pulizia", "k45": "La squadra arriva all'ora concordata, con tutta l'attrezzatura e i prodotti.", "k46": "Verifica", "k47": "Controlliamo il lavoro con te. Se qualcosa non è perfetto, torniamo senza costi.", "k48": "Perché Alvura", "k49": "Fiducia in <em>ogni dettaglio</em>", "k50": "Entriamo in casa tua e nella tua azienda. Per questo lavoriamo con rigore, discrezione e totale trasparenza.", "k51": "Squadre interne", "k52": "Professionisti assunti, formati e riconoscibili. Non subappaltiamo mai.", "k53": "Prodotti ecologici", "k54": "Certificati e sicuri per bambini, animali e tutte le superfici.", "k55": "Assicurazione di responsabilità civile", "k56": "Tutti i servizi sono coperti, per la tua totale tranquillità.", "k57": "Soddisfazione garantita", "k58": "Se non sei soddisfatto, torniamo e rifacciamo senza alcun costo.", "k59": "Prezzi chiari, <em>preventivo gratuito</em>", "k60": "Prezzi indicativi per le pulizie domestiche. Per gli altri servizi inviamo un preventivo su misura.", "k61": "Occasionale", "k62": "Una pulizia completa, quando ti serve", "k63": "A partire da", "k64": "a servizio", "k65": "Fino a 4 ore di pulizia", "k66": "Prodotti e attrezzatura inclusi", "k67": "Cucina, bagni e camere", "k68": "Appuntamento entro 48 ore", "k69": "Richiedi un preventivo", "k70": "Il più scelto", "k71": "Regolare", "k72": "Settimanale o quindicinale, sempre la stessa squadra", "k73": "all'ora", "k74": "La stessa squadra a ogni visita", "k75": "Orario fisso a tua scelta", "k76": "Senza vincoli", "k77": "Aziende", "k78": "Uffici, negozi, cliniche e condomini", "k79": "Prezzo", "k80": "Su misura", "k81": "dopo un sopralluogo gratuito", "k82": "Piano di pulizia personalizzato", "k83": "Servizio fuori orario di lavoro", "k84": "Referente dedicato", "k85": "Fattura mensile", "k86": "Post-cantiere, divani, tappeti e vetri con preventivo gratuito dopo descrizione o sopralluogo.", "k87": "Recensioni", "k88": "Clienti che <em>si fidano di noi</em>", "k89": "“Abbiamo affidato loro la pulizia post-cantiere del nostro appartamento. Tutto impeccabile, sembrava che non ci fossero mai stati lavori.”", "k90": "Pulizie post-cantiere · Lisbona", "k91": "“Puliscono il nostro ufficio da due anni. Puntuali, discreti e sempre con un risultato eccellente.”", "k92": "Ufficio · 25 persone", "k93": "“Il divano sembrava nuovo dopo la pulizia. Hanno tolto macchie che pensavo impossibili.”", "k94": "Divani e imbottiti · Oeiras", "k95": "Domande frequenti", "k96": "Hai dei dubbi?", "k97": "Devo essere presente durante la pulizia?", "k98": "No. Molti clienti ci lasciano la chiave o il codice d'accesso. Tutte le squadre sono riconoscibili e affidabili.", "k99": "I prodotti sono sicuri per bambini e animali?", "k100": "Sì. Usiamo prodotti ecologici e certificati. Se hai allergie o preferenze, adattiamo i prodotti.", "k101": "Portate voi prodotti e attrezzatura?", "k102": "Sì, portiamo tutto il necessario, compresi aspirapolvere professionali e macchine per il lavaggio.", "k103": "In quali zone lavorate?", "k104": "A Lisbona e dintorni: Oeiras, Cascais, Sintra, Amadora, Loures, Odivelas e Almada.", "k105": "Richiedi il tuo preventivo gratuito", "k106": "Dicci il tipo di spazio e il servizio che cerchi. Inviamo un preventivo fisso in meno di 24 ore.", "k107": "Indirizzo", "k108": "Telefono", "k109": "Orari", "k110": "Dal lunedì al sabato, 8–20", "k111": "Richiesta di preventivo", "k112": "Nome", "k113": "Servizio", "k114": "Tipo di spazio", "k115": "Casa o appartamento", "k116": "Ufficio", "k117": "Negozio o ristorante", "k118": "Condominio", "k119": "Altro", "k120": "Superficie approssimativa (m²)", "k121": "Località", "k122": "Data preferita", "k123": "Messaggio (facoltativo)", "k124": "💬 Richiedi un preventivo su WhatsApp", "k125": "I tuoi dati vengono usati solo per rispondere alla tua richiesta.", "k126": "Pulizie specializzate a Lisbona e dintorni, per case, aziende e condomini.", "k127": "Navigazione", "k128": "Seguici", "k129": "Tutti i diritti riservati"}, "de": {"k0": "Professionelle Reinigung", "k1": "Leistungen", "k2": "Ergebnisse", "k3": "So funktioniert's", "k4": "Preise", "k5": "Kontakt", "k6": "Kostenloses Angebot", "k7": "Professionelle Reinigung · Lissabon", "k8": "Makellose Räume, <em>ganz ohne Sorgen.</em>", "k9": "Professionelle Reinigung für Wohnungen, Büros und Gewerbeflächen. Geschulte Teams, zertifizierte Produkte und Ergebnisse, die man sieht.", "k10": "Leistungen ansehen", "k11": "Jahre Erfahrung", "k12": "Fachkräfte im Team", "k13": "Kunden, die wieder buchen", "k14": "Reinigung nach Maß <em>für jeden Raum</em>", "k15": "Von der Wohnung bis zum Büro, vom Sofa bis zur Fassade: Wir setzen für jede Oberfläche die richtige Methode, Ausrüstung und das richtige Produkt ein.", "k16": "Haushaltsreinigung", "k17": "Regelmäßige oder einmalige Reinigung Ihres Zuhauses, mit demselben vertrauten Team.", "k18": "Büros und Geschäfte", "k19": "Tägliche, wöchentliche Reinigung oder außerhalb der Arbeitszeit, ohne Ihren Betrieb zu stören.", "k20": "Baureinigung", "k21": "Entfernung von Feinstaub, Farbe, Zement und Rückständen – bezugsfertig nach der Baustelle.", "k22": "Sofas und Polster", "k23": "Sprühextraktionsreinigung, die Flecken, Milben und Gerüche entfernt.", "k24": "Teppiche und Teppichböden", "k25": "Tiefenreinigung vor Ort oder in unserem Betrieb, mit schneller Trocknung.", "k26": "Fenster und Fassaden", "k27": "Fenster, Schaufenster und hohe Fassaden, mit passender Ausrüstung und Versicherung.", "k28": "Grundreinigung", "k29": "Ideal bei Umzug, Einzug ins neue Zuhause oder Ende des Mietverhältnisses.", "k30": "Wohnanlagen", "k31": "Treppen, Aufzüge, Garagen und Gemeinschaftsflächen, mit festem Reinigungsplan.", "k32": "Den Unterschied <em>sieht man.</em>", "k33": "Ziehen Sie den Regler, um vorher und nachher einer Grundreinigung durch unser Team zu vergleichen.", "k34": "Entfettete und desinfizierte Oberflächen", "k35": "Fugen, Ecken und Sockelleisten bis ins Detail gereinigt", "k36": "Streifenfreie Fenster und gepflegte Böden", "k37": "Vorher", "k38": "Nachher", "k39": "Einfach, schnell <em>und ohne Überraschungen</em>", "k40": "Anfrage", "k41": "Sagen Sie uns per Formular, Telefon oder WhatsApp, was Sie brauchen.", "k42": "Angebot", "k43": "Wir senden innerhalb von 24 Stunden ein Festpreisangebot. Bei Baustellen und Firmen besichtigen wir kostenlos.", "k44": "Reinigung", "k45": "Das Team kommt pünktlich, mit allen Geräten und Produkten.", "k46": "Abnahme", "k47": "Wir prüfen die Arbeit gemeinsam mit Ihnen. Ist etwas nicht perfekt, kommen wir kostenlos wieder.", "k48": "Warum Alvura", "k49": "Vertrauen in <em>jedem Detail</em>", "k50": "Wir betreten Ihr Zuhause und Ihr Unternehmen. Deshalb arbeiten wir sorgfältig, diskret und völlig transparent.", "k51": "Eigene Teams", "k52": "Festangestellte, geschulte und erkennbare Fachkräfte. Wir vergeben nie an Subunternehmer.", "k53": "Umweltfreundliche Produkte", "k54": "Zertifiziert und sicher für Kinder, Haustiere und alle Oberflächen.", "k55": "Haftpflichtversicherung", "k56": "Alle Leistungen sind abgesichert – für Ihre volle Beruhigung.", "k57": "Zufriedenheitsgarantie", "k58": "Wenn Sie nicht zufrieden sind, kommen wir wieder und reinigen kostenlos nach.", "k59": "Klare Preise, <em>kostenloses Angebot</em>", "k60": "Richtpreise für die Haushaltsreinigung. Für alle anderen Leistungen senden wir ein individuelles Angebot.", "k61": "Einmalig", "k62": "Eine komplette Reinigung, wann immer Sie sie brauchen", "k63": "Ab", "k64": "pro Einsatz", "k65": "Bis zu 4 Stunden Reinigung", "k66": "Produkte und Geräte inklusive", "k67": "Küche, Bäder und Schlafzimmer", "k68": "Termin innerhalb von 48 Stunden", "k69": "Angebot anfragen", "k70": "Am beliebtesten", "k71": "Regelmäßig", "k72": "Wöchentlich oder alle zwei Wochen, immer dasselbe Team", "k73": "pro Stunde", "k74": "Dasselbe Team bei jedem Besuch", "k75": "Feste Zeit nach Ihrer Wahl", "k76": "Ohne Vertragsbindung", "k77": "Unternehmen", "k78": "Büros, Geschäfte, Praxen und Wohnanlagen", "k79": "Preis", "k80": "Nach Maß", "k81": "nach kostenloser Besichtigung", "k82": "Individueller Reinigungsplan", "k83": "Service außerhalb der Arbeitszeit", "k84": "Persönlicher Ansprechpartner", "k85": "Monatliche Rechnung", "k86": "Baureinigung, Sofas, Teppiche und Fenster mit kostenlosem Angebot nach Beschreibung oder Besichtigung.", "k87": "Bewertungen", "k88": "Kunden, die <em>uns vertrauen</em>", "k89": "„Wir haben sie für die Baureinigung unserer Wohnung beauftragt. Alles war makellos, als hätte es nie Bauarbeiten gegeben.“", "k90": "Baureinigung · Lissabon", "k91": "„Sie reinigen seit zwei Jahren unser Büro. Pünktlich, diskret und immer mit einem hervorragenden Ergebnis.“", "k92": "Büro · 25 Personen", "k93": "„Das Sofa sah nach der Reinigung wie neu aus. Sie haben Flecken entfernt, die ich für unmöglich hielt.“", "k94": "Sofas und Polster · Oeiras", "k95": "Häufige Fragen", "k96": "Noch Fragen?", "k97": "Muss ich während der Reinigung anwesend sein?", "k98": "Nein. Viele Kunden hinterlassen uns einen Schlüssel oder Zugangscode. Alle Teams sind erkennbar und vertrauenswürdig.", "k99": "Sind die Produkte sicher für Kinder und Haustiere?", "k100": "Ja. Wir verwenden umweltfreundliche, zertifizierte Produkte. Bei Allergien oder Wünschen passen wir die Produkte an.", "k101": "Bringen Sie Produkte und Geräte mit?", "k102": "Ja, wir bringen alles Nötige mit, einschließlich professioneller Staubsauger und Reinigungsmaschinen.", "k103": "In welchen Gebieten sind Sie tätig?", "k104": "In Lissabon und Umgebung: Oeiras, Cascais, Sintra, Amadora, Loures, Odivelas und Almada.", "k105": "Fordern Sie Ihr kostenloses Angebot an", "k106": "Nennen Sie uns die Art der Räume und die gewünschte Leistung. Wir senden innerhalb von 24 Stunden ein Festpreisangebot.", "k107": "Adresse", "k108": "Telefon", "k109": "Öffnungszeiten", "k110": "Montag bis Samstag, 8–20 Uhr", "k111": "Angebotsanfrage", "k112": "Name", "k113": "Leistung", "k114": "Art der Räume", "k115": "Haus oder Wohnung", "k116": "Büro", "k117": "Geschäft oder Restaurant", "k118": "Wohnanlage", "k119": "Sonstiges", "k120": "Ungefähre Fläche (m²)", "k121": "Ort", "k122": "Wunschtermin", "k123": "Nachricht (optional)", "k124": "💬 Angebot per WhatsApp anfragen", "k125": "Ihre Daten werden nur zur Beantwortung Ihrer Anfrage verwendet.", "k126": "Professionelle Reinigung in Lissabon und Umgebung, für Wohnungen, Unternehmen und Wohnanlagen.", "k127": "Navigation", "k128": "Folgen Sie uns", "k129": "Alle Rechte vorbehalten"}, "uk": {"k0": "Професійне прибирання", "k1": "Послуги", "k2": "Результати", "k3": "Як це працює", "k4": "Ціни", "k5": "Контакти", "k6": "Безкоштовний розрахунок", "k7": "Професійне прибирання · Лісабон", "k8": "Бездоганна чистота — <em>без турбот.</em>", "k9": "Професійне прибирання будинків, офісів і комерційних приміщень. Навчені команди, сертифіковані засоби та помітний результат.", "k10": "Переглянути послуги", "k11": "Років досвіду", "k12": "Фахівців у команді", "k13": "Клієнтів замовляють знову", "k14": "Прибирання під <em>кожен простір</em>", "k15": "Від квартири до офісу, від дивана до фасаду: ми застосовуємо правильний метод, обладнання й засоби для кожної поверхні.", "k16": "Прибирання житла", "k17": "Регулярне або разове прибирання вашого дому тією самою надійною командою.", "k18": "Офіси та магазини", "k19": "Щоденне, щотижневе або позаробоче прибирання без перерв у вашій роботі.", "k20": "Прибирання після ремонту", "k21": "Видалення дрібного пилу, фарби, цементу й залишків — житло готове до заселення.", "k22": "Дивани та м'які меблі", "k23": "Хімчистка методом екстракції, що видаляє плями, кліщів і запахи.", "k24": "Килими та ковролін", "k25": "Глибоке чищення на місці або в нашому цеху зі швидким висиханням.", "k26": "Вікна та фасади", "k27": "Вікна, вітрини й висотні фасади з належним обладнанням і страхуванням.", "k28": "Генеральне прибирання", "k29": "Ідеально для переїзду, заселення в нове житло чи завершення оренди.", "k30": "Багатоквартирні будинки", "k31": "Сходи, ліфти, гаражі та спільні зони за фіксованим графіком.", "k32": "Різницю <em>видно.</em>", "k33": "Перетягніть повзунок, щоб порівняти «до» і «після» генерального прибирання нашої команди.", "k34": "Знежирені та продезінфіковані поверхні", "k35": "Шви, кути й плінтуси, вичищені до дрібниць", "k36": "Вікна без розводів і доглянуті підлоги", "k37": "До", "k38": "Після", "k39": "Просто, швидко <em>і без сюрпризів</em>", "k40": "Заявка", "k41": "Розкажіть, що потрібно, через форму, телефоном або у WhatsApp.", "k42": "Розрахунок", "k43": "Надсилаємо фіксовану ціну протягом 24 годин. Для ремонтів і компаній — безкоштовний виїзд.", "k44": "Прибирання", "k45": "Команда приїжджає вчасно з усім обладнанням і засобами.", "k46": "Перевірка", "k47": "Перевіряємо роботу разом із вами. Якщо щось не ідеально — повертаємося безкоштовно.", "k48": "Чому Alvura", "k49": "Довіра в <em>кожній деталі</em>", "k50": "Ми заходимо у ваш дім і вашу компанію. Тому працюємо ретельно, делікатно й повністю прозоро.", "k51": "Власні команди", "k52": "Штатні, навчені фахівці з посвідченнями. Ми ніколи не залучаємо субпідрядників.", "k53": "Екологічні засоби", "k54": "Сертифіковані й безпечні для дітей, тварин і всіх поверхонь.", "k55": "Страхування відповідальності", "k56": "Усі послуги застраховані — для вашого повного спокою.", "k57": "Гарантія якості", "k58": "Якщо ви не задоволені, ми повернемося й переробимо безкоштовно.", "k59": "Зрозумілі ціни, <em>безкоштовний розрахунок</em>", "k60": "Орієнтовні ціни на прибирання житла. Для інших послуг надсилаємо індивідуальний розрахунок.", "k61": "Разове", "k62": "Повне прибирання, коли вам потрібно", "k63": "Від", "k64": "за послугу", "k65": "До 4 годин прибирання", "k66": "Засоби та обладнання включено", "k67": "Кухня, ванні кімнати та спальні", "k68": "Запис протягом 48 годин", "k69": "Дізнатися ціну", "k70": "Найпопулярніше", "k71": "Регулярне", "k72": "Щотижня або раз на два тижні, завжди та сама команда", "k73": "за годину", "k74": "Та сама команда на кожному візиті", "k75": "Фіксований час на ваш вибір", "k76": "Без зобов'язань", "k77": "Компаніям", "k78": "Офіси, магазини, клініки та житлові будинки", "k79": "Ціна", "k80": "Індивідуально", "k81": "після безкоштовного огляду", "k82": "Персональний план прибирання", "k83": "Обслуговування в неробочий час", "k84": "Персональний менеджер", "k85": "Щомісячний рахунок", "k86": "Прибирання після ремонту, дивани, килими й вікна — безкоштовний розрахунок після опису чи огляду.", "k87": "Відгуки", "k88": "Клієнти, які <em>нам довіряють</em>", "k89": "«Замовили прибирання квартири після ремонту. Усе було бездоганно, наче ремонту й не було.»", "k90": "Прибирання після ремонту · Лісабон", "k91": "«Уже два роки прибирають наш офіс. Пунктуальні, делікатні й завжди з відмінним результатом.»", "k92": "Офіс · 25 осіб", "k93": "«Після чистки диван виглядав як новий. Вивели плями, які я вважала безнадійними.»", "k94": "Дивани та м'які меблі · Оейраш", "k95": "Часті запитання", "k96": "Маєте запитання?", "k97": "Чи потрібно бути вдома під час прибирання?", "k98": "Ні. Багато клієнтів залишають нам ключ або код доступу. Усі команди мають посвідчення й заслуговують на довіру.", "k99": "Чи безпечні засоби для дітей і тварин?", "k100": "Так. Ми використовуємо екологічні сертифіковані засоби. Якщо у вас алергія чи особливі побажання, підберемо інші.", "k101": "Ви привозите засоби й обладнання?", "k102": "Так, привозимо все необхідне, зокрема професійні пилососи й мийні машини.", "k103": "У яких районах ви працюєте?", "k104": "У Лісабоні та околицях: Оейраш, Кашкайш, Сінтра, Амадора, Лоуреш, Оделваш і Алмада.", "k105": "Отримайте безкоштовний розрахунок", "k106": "Вкажіть тип приміщення й потрібну послугу. Надішлемо фіксовану ціну менш ніж за 24 години.", "k107": "Адреса", "k108": "Телефон", "k109": "Години роботи", "k110": "Понеділок–субота, 8:00–20:00", "k111": "Запит на розрахунок", "k112": "Ім'я", "k113": "Послуга", "k114": "Тип приміщення", "k115": "Будинок або квартира", "k116": "Офіс", "k117": "Магазин або ресторан", "k118": "Житловий будинок", "k119": "Інше", "k120": "Приблизна площа (м²)", "k121": "Населений пункт", "k122": "Бажана дата", "k123": "Повідомлення (необов'язково)", "k124": "💬 Запросити ціну у WhatsApp", "k125": "Ваші дані використовуються лише для відповіді на ваш запит.", "k126": "Професійне прибирання в Лісабоні та околицях — для житла, компаній і багатоквартирних будинків.", "k127": "Навігація", "k128": "Ми в соцмережах", "k129": "Усі права захищено"}, "ru": {"k0": "Профессиональная уборка", "k1": "Услуги", "k2": "Результаты", "k3": "Как это работает", "k4": "Цены", "k5": "Контакты", "k6": "Бесплатный расчёт", "k7": "Профессиональная уборка · Лиссабон", "k8": "Безупречная чистота — <em>без забот.</em>", "k9": "Профессиональная уборка домов, офисов и коммерческих помещений. Обученные команды, сертифицированные средства и заметный результат.", "k10": "Смотреть услуги", "k11": "Лет опыта", "k12": "Специалистов в команде", "k13": "Клиентов заказывают снова", "k14": "Уборка под <em>каждое пространство</em>", "k15": "От квартиры до офиса, от дивана до фасада: мы применяем правильный метод, оборудование и средства для каждой поверхности.", "k16": "Уборка жилья", "k17": "Регулярная или разовая уборка вашего дома одной и той же надёжной командой.", "k18": "Офисы и магазины", "k19": "Ежедневная, еженедельная или внерабочая уборка без перерывов в вашей работе.", "k20": "Уборка после ремонта", "k21": "Удаление мелкой пыли, краски, цемента и остатков — жильё готово к заселению.", "k22": "Диваны и мягкая мебель", "k23": "Химчистка методом экстракции, удаляющая пятна, клещей и запахи.", "k24": "Ковры и ковролин", "k25": "Глубокая чистка на месте или в нашем цехе с быстрой сушкой.", "k26": "Окна и фасады", "k27": "Окна, витрины и высотные фасады с подходящим оборудованием и страховкой.", "k28": "Генеральная уборка", "k29": "Идеально для переезда, заселения в новое жильё или окончания аренды.", "k30": "Многоквартирные дома", "k31": "Лестницы, лифты, гаражи и общие зоны по фиксированному графику.", "k32": "Разница <em>видна.</em>", "k33": "Перетащите ползунок, чтобы сравнить «до» и «после» генеральной уборки нашей команды.", "k34": "Обезжиренные и продезинфицированные поверхности", "k35": "Швы, углы и плинтусы, вычищенные до мелочей", "k36": "Окна без разводов и ухоженные полы", "k37": "До", "k38": "После", "k39": "Просто, быстро <em>и без сюрпризов</em>", "k40": "Заявка", "k41": "Расскажите, что нужно, через форму, по телефону или в WhatsApp.", "k42": "Расчёт", "k43": "Присылаем фиксированную цену в течение 24 часов. Для ремонтов и компаний — бесплатный выезд.", "k44": "Уборка", "k45": "Команда приезжает вовремя со всем оборудованием и средствами.", "k46": "Проверка", "k47": "Проверяем работу вместе с вами. Если что-то не идеально — возвращаемся бесплатно.", "k48": "Почему Alvura", "k49": "Доверие в <em>каждой детали</em>", "k50": "Мы входим в ваш дом и вашу компанию. Поэтому работаем тщательно, деликатно и полностью прозрачно.", "k51": "Собственные команды", "k52": "Штатные, обученные специалисты с удостоверениями. Мы никогда не привлекаем субподрядчиков.", "k53": "Экологичные средства", "k54": "Сертифицированные и безопасные для детей, животных и всех поверхностей.", "k55": "Страхование ответственности", "k56": "Все услуги застрахованы — для вашего полного спокойствия.", "k57": "Гарантия качества", "k58": "Если вы не довольны, мы вернёмся и переделаем бесплатно.", "k59": "Понятные цены, <em>бесплатный расчёт</em>", "k60": "Ориентировочные цены на уборку жилья. Для других услуг присылаем индивидуальный расчёт.", "k61": "Разовая", "k62": "Полная уборка, когда вам нужно", "k63": "От", "k64": "за услугу", "k65": "До 4 часов уборки", "k66": "Средства и оборудование включены", "k67": "Кухня, ванные комнаты и спальни", "k68": "Запись в течение 48 часов", "k69": "Узнать цену", "k70": "Самая популярная", "k71": "Регулярная", "k72": "Еженедельно или раз в две недели, всегда одна команда", "k73": "в час", "k74": "Одна и та же команда при каждом визите", "k75": "Фиксированное время на ваш выбор", "k76": "Без обязательств", "k77": "Компаниям", "k78": "Офисы, магазины, клиники и жилые дома", "k79": "Цена", "k80": "Индивидуально", "k81": "после бесплатного осмотра", "k82": "Персональный план уборки", "k83": "Обслуживание в нерабочее время", "k84": "Персональный менеджер", "k85": "Ежемесячный счёт", "k86": "Уборка после ремонта, диваны, ковры и окна — бесплатный расчёт после описания или осмотра.", "k87": "Отзывы", "k88": "Клиенты, которые <em>нам доверяют</em>", "k89": "«Заказали уборку квартиры после ремонта. Всё было безупречно, будто ремонта и не было.»", "k90": "Уборка после ремонта · Лиссабон", "k91": "«Уже два года убирают наш офис. Пунктуальные, деликатные и всегда с отличным результатом.»", "k92": "Офис · 25 человек", "k93": "«После чистки диван выглядел как новый. Вывели пятна, которые я считала безнадёжными.»", "k94": "Диваны и мягкая мебель · Оэйраш", "k95": "Частые вопросы", "k96": "Есть вопросы?", "k97": "Нужно ли быть дома во время уборки?", "k98": "Нет. Многие клиенты оставляют нам ключ или код доступа. Все команды с удостоверениями и заслуживают доверия.", "k99": "Безопасны ли средства для детей и животных?", "k100": "Да. Мы используем экологичные сертифицированные средства. Если у вас аллергия или особые пожелания, подберём другие.", "k101": "Вы привозите средства и оборудование?", "k102": "Да, привозим всё необходимое, включая профессиональные пылесосы и моющие машины.", "k103": "В каких районах вы работаете?", "k104": "В Лиссабоне и окрестностях: Оэйраш, Кашкайш, Синтра, Амадора, Лоуреш, Одивелаш и Алмада.", "k105": "Получите бесплатный расчёт", "k106": "Укажите тип помещения и нужную услугу. Пришлём фиксированную цену менее чем за 24 часа.", "k107": "Адрес", "k108": "Телефон", "k109": "Часы работы", "k110": "Понедельник–суббота, 8:00–20:00", "k111": "Запрос расчёта", "k112": "Имя", "k113": "Услуга", "k114": "Тип помещения", "k115": "Дом или квартира", "k116": "Офис", "k117": "Магазин или ресторан", "k118": "Жилой дом", "k119": "Другое", "k120": "Примерная площадь (м²)", "k121": "Населённый пункт", "k122": "Желаемая дата", "k123": "Сообщение (необязательно)", "k124": "💬 Запросить цену в WhatsApp", "k125": "Ваши данные используются только для ответа на ваш запрос.", "k126": "Профессиональная уборка в Лиссабоне и окрестностях — для жилья, компаний и многоквартирных домов.", "k127": "Навигация", "k128": "Мы в соцсетях", "k129": "Все права защищены"}, "ja": {"k0": "プロのクリーニング", "k1": "サービス", "k2": "施工事例", "k3": "ご利用の流れ", "k4": "料金", "k5": "お問い合わせ", "k6": "無料見積もり", "k7": "プロのクリーニング · リスボン", "k8": "完璧な清潔さを、<em>手間なく。</em>", "k9": "住宅、オフィス、店舗のプロによる清掃。研修を受けたスタッフ、認証済みの洗剤、目に見える仕上がり。", "k10": "サービスを見る", "k11": "年の実績", "k12": "名の専門スタッフ", "k13": "リピート率", "k14": "<em>あらゆる空間</em>に合わせた清掃", "k15": "マンションからオフィス、ソファから外壁まで。素材ごとに最適な方法・機材・洗剤を使います。", "k16": "ハウスクリーニング", "k17": "定期またはスポットで、いつも同じ信頼できるチームがご自宅を清掃します。", "k18": "オフィス・店舗", "k19": "毎日・毎週、または営業時間外の清掃。業務を止めることはありません。", "k20": "工事後クリーニング", "k21": "細かな粉じん、塗料、セメント、残材を除去し、すぐに住める状態でお引き渡しします。", "k22": "ソファ・布製家具", "k23": "シミ、ダニ、においを落とすリンサー洗浄。", "k24": "ラグ・カーペット", "k25": "現地または自社工場での徹底洗浄。速乾仕上げ。", "k26": "窓・外壁", "k27": "窓、ショーウィンドウ、高所の外壁も、適切な機材と保険で対応。", "k28": "徹底クリーニング", "k29": "引っ越し、新居への入居、賃貸の退去時に最適です。", "k30": "マンション共用部", "k31": "階段、エレベーター、駐車場、共用部を定期プランで清掃。", "k32": "違いは<em>一目瞭然。</em>", "k33": "バーをドラッグして、当社の徹底クリーニングのビフォー・アフターを比べてください。", "k34": "油汚れを落とし除菌した表面", "k35": "目地、隅、幅木まで細部をきれいに", "k36": "跡の残らない窓とお手入れ済みの床", "k37": "ビフォー", "k38": "アフター", "k39": "シンプル、スピーディー、<em>追加費用なし</em>", "k40": "ご依頼", "k41": "フォーム、お電話、WhatsAppでご要望をお知らせください。", "k42": "お見積もり", "k43": "24時間以内に確定見積もりをお送りします。工事現場や法人様は無料で現地調査します。", "k44": "清掃", "k45": "スタッフが時間どおりに伺い、機材と洗剤はすべて持参します。", "k46": "確認", "k47": "仕上がりを一緒に確認。不十分な点があれば無料で再訪します。", "k48": "Alvuraが選ばれる理由", "k49": "<em>細部まで</em>信頼を", "k50": "お客様のご自宅や会社に入らせていただくからこそ、丁寧に、控えめに、透明性をもって仕事をします。", "k51": "自社スタッフ", "k52": "雇用・研修済みで身元の確かなスタッフ。外注は一切しません。", "k53": "エコ洗剤", "k54": "認証済みで、子ども、ペット、あらゆる素材に安全です。", "k55": "賠償責任保険", "k56": "すべてのサービスが保険の対象。安心してお任せください。", "k57": "満足保証", "k58": "ご満足いただけない場合は、無料で再清掃します。", "k59": "明確な料金、<em>見積もり無料</em>", "k60": "ハウスクリーニングの目安料金です。その他のサービスは個別にお見積もりします。", "k61": "スポット", "k62": "必要なときに、まるごと清掃", "k63": "最低料金", "k64": "1回あたり", "k65": "最大4時間の清掃", "k66": "洗剤・機材込み", "k67": "キッチン、浴室、寝室", "k68": "48時間以内に予約可能", "k69": "見積もりを依頼", "k70": "いちばん人気", "k71": "定期", "k72": "毎週または隔週、いつも同じチーム", "k73": "1時間あたり", "k74": "毎回同じチームが担当", "k75": "お好きな時間に固定", "k76": "契約期間の縛りなし", "k77": "法人", "k78": "オフィス、店舗、クリニック、マンション", "k79": "価格", "k80": "個別対応", "k81": "無料現地調査の後に", "k82": "オーダーメイドの清掃プラン", "k83": "営業時間外のサービス", "k84": "専任担当者", "k85": "月末請求", "k86": "工事後清掃、ソファ、ラグ、窓は、内容確認または現地調査の後に無料でお見積もりします。", "k87": "お客様の声", "k88": "<em>信頼してくださる</em>お客様", "k89": "「マンションの工事後クリーニングをお願いしました。工事があったとは思えないほど完璧でした。」", "k90": "工事後クリーニング · リスボン", "k91": "「2年前からオフィスの清掃をお願いしています。時間に正確で控えめ、いつも素晴らしい仕上がりです。」", "k92": "オフィス · 25名", "k93": "「クリーニング後、ソファが新品のようになりました。無理だと思っていたシミも落ちました。」", "k94": "ソファ・布製家具 · オエイラス", "k95": "よくあるご質問", "k96": "ご質問はありますか?", "k97": "清掃中に立ち会う必要はありますか?", "k98": "いいえ。多くのお客様が鍵や暗証番号を預けてくださいます。スタッフは全員身元が確かで信頼できます。", "k99": "洗剤は子どもやペットに安全ですか?", "k100": "はい。認証済みのエコ洗剤を使用しています。アレルギーやご希望があれば洗剤を変更します。", "k101": "洗剤や機材は持参してもらえますか?", "k102": "はい。業務用掃除機や洗浄機を含め、必要なものはすべて持参します。", "k103": "対応エリアは?", "k104": "リスボンと周辺地域:オエイラス、カスカイス、シントラ、アマドーラ、ロウレス、オディヴェラス、アルマダ。", "k105": "無料見積もりを依頼する", "k106": "空間の種類とご希望のサービスをお知らせください。24時間以内に確定見積もりをお送りします。", "k107": "住所", "k108": "電話", "k109": "営業時間", "k110": "月〜土 8:00〜20:00", "k111": "お見積もりのご依頼", "k112": "お名前", "k113": "サービス", "k114": "空間の種類", "k115": "一戸建て・マンション", "k116": "オフィス", "k117": "店舗・レストラン", "k118": "マンション共用部", "k119": "その他", "k120": "おおよその面積(m²)", "k121": "地域", "k122": "希望日", "k123": "メッセージ(任意)", "k124": "💬 WhatsAppで見積もりを依頼", "k125": "お客様の情報はお問い合わせへの返信にのみ使用します。", "k126": "リスボンと周辺地域のプロのクリーニング。住宅、企業、マンションに対応。", "k127": "メニュー", "k128": "フォローする", "k129": "無断転載禁止"}, "zh": {"k0": "专业清洁", "k1": "服务项目", "k2": "清洁效果", "k3": "服务流程", "k4": "价格", "k5": "联系我们", "k6": "免费报价", "k7": "专业清洁 · 里斯本", "k8": "一尘不染,<em>省心无忧。</em>", "k9": "为住宅、办公室和商业场所提供专业清洁。训练有素的团队、认证产品,效果看得见。", "k10": "查看服务", "k11": "年经验", "k12": "名专业人员", "k13": "回头客比例", "k14": "为<em>每个空间</em>量身清洁", "k15": "从公寓到办公室,从沙发到外墙:每种表面都采用合适的方法、设备和产品。", "k16": "家庭保洁", "k17": "定期或单次上门清洁,始终由同一支可靠团队负责。", "k18": "办公室与店铺", "k19": "每日、每周或非工作时间清洁,不打扰您的营业。", "k20": "装修后开荒", "k21": "清除细尘、油漆、水泥和残渣,交付即可入住。", "k22": "沙发与布艺", "k23": "注抽式深层清洗,去除污渍、螨虫和异味。", "k24": "地毯与满铺地毯", "k25": "上门或在我们工厂深度清洗,快速干燥。", "k26": "玻璃与外墙", "k27": "玻璃、橱窗及高空外墙,配备专业设备和保险。", "k28": "深度清洁", "k29": "适合搬家、入住新居或租约结束时。", "k30": "住宅楼公共区域", "k31": "楼梯、电梯、车库和公共区域,按固定计划清洁。", "k32": "差别<em>一目了然。</em>", "k33": "拖动滑块,对比我们团队深度清洁前后的效果。", "k34": "表面除油并消毒", "k35": "缝隙、角落和踢脚线细致清洁", "k36": "玻璃无痕,地面养护", "k37": "清洁前", "k38": "清洁后", "k39": "简单、快捷,<em>没有意外</em>", "k40": "提交需求", "k41": "通过表单、电话或WhatsApp告诉我们您的需求。", "k42": "报价", "k43": "24小时内发送固定报价。装修工地和企业客户可免费上门评估。", "k44": "清洁", "k45": "团队准时到达,自带全部设备和清洁用品。", "k46": "验收", "k47": "与您一起检查。如有不完美之处,免费返工。", "k48": "为什么选择Alvura", "k49": "<em>每个细节</em>都值得信赖", "k50": "我们进入您的家和公司,因此始终以严谨、低调和完全透明的方式工作。", "k51": "自有团队", "k52": "正式聘用、经过培训并佩戴工牌的专业人员,从不转包。", "k53": "环保产品", "k54": "经过认证,对儿童、宠物和各类表面都安全。", "k55": "责任保险", "k56": "所有服务均有保险保障,让您完全放心。", "k57": "满意保证", "k58": "如不满意,我们将免费重新清洁。", "k59": "价格透明,<em>免费报价</em>", "k60": "以下为家庭保洁参考价。其他服务我们将量身报价。", "k61": "单次", "k62": "需要时进行一次全面清洁", "k63": "起价", "k64": "每次", "k65": "最长4小时清洁", "k66": "含清洁用品和设备", "k67": "厨房、浴室和卧室", "k68": "48小时内可预约", "k69": "获取报价", "k70": "最受欢迎", "k71": "定期", "k72": "每周或每两周一次,始终同一团队", "k73": "每小时", "k74": "每次都是同一团队", "k75": "按您选择的固定时间", "k76": "无需长期合约", "k77": "企业", "k78": "办公室、店铺、诊所和住宅楼", "k79": "价格", "k80": "定制", "k81": "免费上门评估后", "k82": "个性化清洁方案", "k83": "非工作时间服务", "k84": "专属客户经理", "k85": "按月开票", "k86": "装修后开荒、沙发、地毯和玻璃,根据描述或上门评估后免费报价。", "k87": "客户评价", "k88": "<em>信赖我们</em>的客户", "k89": "\"我们请他们做了公寓的装修后开荒,交付时一尘不染,完全看不出装修过。\"", "k90": "装修后开荒 · 里斯本", "k91": "\"他们为我们的办公室做清洁已经两年了。准时、低调,效果一直很出色。\"", "k92": "办公室 · 25人", "k93": "\"清洗后沙发像新的一样,连我以为去不掉的污渍都清除了。\"", "k94": "沙发与布艺 · 奥埃拉什", "k95": "常见问题", "k96": "有疑问吗?", "k97": "清洁时我需要在场吗?", "k98": "不需要。许多客户会留下钥匙或门禁密码。所有团队成员身份明确、值得信赖。", "k99": "清洁产品对儿童和宠物安全吗?", "k100": "安全。我们使用经过认证的环保产品。如有过敏或特殊要求,我们会更换产品。", "k101": "你们会自带清洁用品和设备吗?", "k102": "会的,我们自带所有所需物品,包括专业吸尘器和清洗机。", "k103": "服务范围包括哪些地区?", "k104": "里斯本及周边:奥埃拉什、卡斯凯什、辛特拉、阿马多拉、洛雷斯、奥迪韦拉什和阿尔马达。", "k105": "获取免费报价", "k106": "告诉我们空间类型和所需服务,我们将在24小时内发送固定报价。", "k107": "地址", "k108": "电话", "k109": "营业时间", "k110": "周一至周六 8:00–20:00", "k111": "报价申请", "k112": "姓名", "k113": "服务", "k114": "空间类型", "k115": "住宅或公寓", "k116": "办公室", "k117": "店铺或餐厅", "k118": "住宅楼", "k119": "其他", "k120": "大致面积(平方米)", "k121": "所在地区", "k122": "期望日期", "k123": "留言(可选)", "k124": "💬 通过WhatsApp获取报价", "k125": "您的信息仅用于回复您的咨询。", "k126": "里斯本及周边的专业清洁服务,面向住宅、企业和住宅楼。", "k127": "导航", "k128": "关注我们", "k129": "版权所有"}};
+  const LANG_FLAGS = {"pt": "https://flagcdn.com/w40/pt.png", "en": "https://flagcdn.com/w40/gb.png", "es": "https://flagcdn.com/w40/es.png", "fr": "https://flagcdn.com/w40/fr.png", "it": "https://flagcdn.com/w40/it.png", "de": "https://flagcdn.com/w40/de.png", "uk": "https://flagcdn.com/w40/ua.png", "ru": "https://flagcdn.com/w40/ru.png", "ja": "https://flagcdn.com/w40/jp.png", "zh": "https://flagcdn.com/w40/cn.png"};
+  const ptText = {};
+  document.querySelectorAll('[data-i18n]').forEach(el => { ptText[el.dataset.i18n] = el.innerHTML; });
+  const langBox = document.getElementById('lang');
+  function setLang(lang) {
+    if (lang !== 'pt' && !I18N[lang]) lang = 'pt';
+    const dict = I18N[lang] || {};
+    document.querySelectorAll('[data-i18n]').forEach(el => { const k = el.dataset.i18n; el.innerHTML = dict[k] ?? ptText[k]; });
+    document.documentElement.lang = lang === 'pt' ? 'pt-PT' : lang;
+    document.getElementById('langFlag').src = LANG_FLAGS[lang];
+    document.getElementById('langCode').textContent = lang.toUpperCase();
+    document.querySelectorAll('#langMenu button').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+  }
+  document.getElementById('langBtn').addEventListener('click', e => {
+    e.stopPropagation();
+    const open = langBox.classList.toggle('open');
+    e.currentTarget.setAttribute('aria-expanded', open);
+  });
+  document.querySelectorAll('#langMenu button').forEach(b => b.addEventListener('click', () => { setLang(b.dataset.lang); langBox.classList.remove('open'); }));
+  document.addEventListener('click', () => langBox.classList.remove('open'));
+  let saved = null;
+  try { saved = localStorage.getItem('lang'); } catch (e) {}
+  setLang(saved || (navigator.language || 'pt').slice(0, 2));
+</script>
+</body>
+</html>
